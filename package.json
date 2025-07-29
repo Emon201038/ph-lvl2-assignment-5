@@ -1,0 +1,51 @@
+{
+  "name": "assignment-5",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "lint": "eslint ./src --ext .ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emon201038/ph-lvl2-assignment-5.git"
+  },
+  "keywords": [
+    "Parcel",
+    "Delevery",
+    "System"
+  ],
+  "author": "Emdadul Hoque Emon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Emon201038/ph-lvl2-assignment-5/issues"
+  },
+  "homepage": "https://github.com/Emon201038/ph-lvl2-assignment-5#readme",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.16.5",
+    "nodemailer": "^7.0.5",
+    "zod": "^4.0.11"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@types/cookie-parser": "^1.4.9",
+    "@types/cors": "^2.8.19",
+    "@types/dotenv": "^8.2.3",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/mongoose": "^5.11.97",
+    "eslint": "^9.32.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.38.0"
+  }
+}
