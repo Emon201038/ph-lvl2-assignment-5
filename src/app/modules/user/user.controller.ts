@@ -5,6 +5,7 @@ import User from "./user.model";
 import { sendResponse } from "../../utils/sendResponse";
 import { HTTP_STATUS } from "../../utils/httpStatus";
 import { UserService } from "./user.service";
+import { JwtPayload } from "../../utils/jwt";
 
 
 const createUser = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
@@ -44,11 +45,26 @@ const getUser = catchAsync(async (req: Request, res: Response, next: NextFunctio
 });
 
 const updateUser = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
-  const user = await UserService.updateUser();
+  const user = await UserService.updateUser(req.params.id, req.body, req.user as JwtPayload);
+  sendResponse(res,
+    {
+      success: true,
+      statusCode: HTTP_STATUS.OK,
+      message: "User updated successfully.",
+      data: user
+    })
 });
 
 const deleteUser = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
-  const user = await UserService.deleteUser();
+  const user = await UserService.deleteUser(req.user as JwtPayload, req.params.id);
+
+  sendResponse(res,
+    {
+      success: true,
+      statusCode: HTTP_STATUS.OK,
+      message: "User deleted successfully.",
+      data: user
+    })
 });
 
 export const UserController = {
