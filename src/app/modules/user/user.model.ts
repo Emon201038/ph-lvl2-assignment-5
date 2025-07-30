@@ -1,6 +1,7 @@
 import { model, Schema } from "mongoose";
 import bcrypt from "bcryptjs";
 import { AuthProvider, IUser, UserRole } from "./user.interface";
+import { envVars } from "../../config/env";
 
 const userSchema = new Schema<IUser>({
   name: {
@@ -11,7 +12,21 @@ const userSchema = new Schema<IUser>({
     type: String,
     required: [true, "User email is required."]
   },
-  phone: String,
+  phone: {
+    type: String,
+    match: [
+      /^(?:\+8801|01)[3-9]\d{8}$/,
+      "Phone number is invalid. Please enter a valid Bangladeshi phone number starting with +8801 or 01"
+    ],
+    set: (v: string) => {
+      if (!v) return v; // allow empty or undefined
+      if (v.startsWith('01')) {
+        return `+88${v}`;
+      }
+      return v; // already starts with +8801, return as-is
+    }
+  },
+  picture: String,
   adress: String,
   password: {
     type: String,
@@ -19,7 +34,7 @@ const userSchema = new Schema<IUser>({
     trim: true,
     minLength: [6, "User password must be at least 6 characters"],
     set: (v: string) => {
-      return bcrypt.hashSync(v, bcrypt.genSaltSync(10));
+      return bcrypt.hashSync(v, bcrypt.genSaltSync(Number(envVars.SALT_ROUNDS)));
     },
   },
   role: {
