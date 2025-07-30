@@ -31,7 +31,9 @@ passport.use(new LocalStrategy({
         return done(null, false, { message: "Invalid password" });
       };
 
-
+      if (user.isDeleted) {
+        return done(null, false, { message: "User is deleted" });
+      };
 
       if (user.isBlocked) {
         return done(null, false, { message: "User is blocked" });

@@ -35,6 +35,7 @@ const login = catchAsync(async (req: Request, res: Response, next: NextFunction)
       data: {
         accessToken,
         refreshToken,
+        user
       }
     })
 
