@@ -33,12 +33,11 @@ const getUsers = catchAsync(
 
 const getUser = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-    const user = await User.findById(req.params.id);
     sendResponse(res, {
       success: true,
       statusCode: HTTP_STATUS.OK,
       message: "User retrieved successfully.",
-      data: user,
+      data: await UserService.getUser(req.params.id),
     });
   }
 );
