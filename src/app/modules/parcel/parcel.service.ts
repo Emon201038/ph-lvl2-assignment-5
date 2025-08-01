@@ -290,6 +290,21 @@ const getSenderParcels = async (
 };
 
 // ✅
+const myParcels = async (query: Record<string, string>, user: JwtPayload) => {
+  const role = user.role.toLowerCase();
+  const builder = new QueryBuilder<typeof Parcel.prototype>(Parcel, {
+    ...query,
+    [role]: user.userId,
+  });
+  const res = await builder
+    .filter()
+    .search(["paymentInfo.method", "paymentInfo.status", "status"])
+    .paginate()
+    .execWithMeta();
+  return { parcels: res.data, meta: res.meta };
+};
+
+// ✅
 const getReceiverParcels = async (
   query: Record<string, string>,
   user: JwtPayload
@@ -357,4 +372,5 @@ export const ParcelService = {
   getSenderParcels,
   getReceiverParcels,
   trackParcel,
+  myParcels,
 };
