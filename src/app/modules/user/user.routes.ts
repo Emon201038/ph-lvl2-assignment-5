@@ -10,12 +10,16 @@ const userRouter = express.Router();
 userRouter
   .route("/")
   .get(checkAuth(UserRole.ADMIN), UserController.getUsers)
-  .post(validateRequest(createUserSchema), UserController.createUser)
+  .post(validateRequest(createUserSchema), UserController.createUser);
 
 userRouter
   .route("/:id")
-  .get(checkAuth(...Object.values(UserRole)), UserController.getUser)
-  .put(checkAuth(...Object.values(UserRole)), validateRequest(updateUserSchema), UserController.updateUser)
+  .get(checkAuth(UserRole.ADMIN), UserController.getUser)
+  .put(
+    checkAuth(...Object.values(UserRole)),
+    validateRequest(updateUserSchema),
+    UserController.updateUser
+  )
   .delete(checkAuth(...Object.values(UserRole)), UserController.deleteUser);
 
 export default userRouter;
