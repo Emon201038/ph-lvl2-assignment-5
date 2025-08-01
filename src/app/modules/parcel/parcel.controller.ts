@@ -185,6 +185,20 @@ const returnParcel = catchAsync(
   }
 );
 
+const myParcels = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    sendResponse(res, {
+      success: true,
+      statusCode: 200,
+      message: "My parcels retrieved successfully.",
+      data: await ParcelService.myParcels(
+        req.query as Record<string, string>,
+        req.user as JwtPayload
+      ),
+    });
+  }
+);
+
 export const ParcelController = {
   create,
   listUserParcels,
@@ -199,4 +213,5 @@ export const ParcelController = {
   senderParcels,
   receiverParcels,
   trackParcel,
+  myParcels,
 };

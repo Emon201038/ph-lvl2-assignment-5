@@ -20,13 +20,13 @@ parcelRouter
   .get(checkAuth(UserRole.ADMIN), ParcelController.allParcels);
 
 parcelRouter.get(
-  "/sender/me",
-  checkAuth(UserRole.SENDER),
+  "/sender",
+  checkAuth(UserRole.SENDER, UserRole.ADMIN),
   ParcelController.listUserParcels
 );
 parcelRouter.get(
-  "/receiver/me",
-  checkAuth(UserRole.RECEIVER),
+  "/receiver",
+  checkAuth(UserRole.RECEIVER, UserRole.ADMIN),
   ParcelController.listUserParcels
 );
 
@@ -62,6 +62,12 @@ parcelRouter.patch(
 );
 
 parcelRouter.get("/tracking/:trackingId", ParcelController.trackParcel);
+
+parcelRouter.get(
+  "/me",
+  checkAuth(...Object.values(UserRole)),
+  ParcelController.myParcels
+);
 
 parcelRouter
   .route("/:id")
