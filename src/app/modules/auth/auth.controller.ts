@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any */
-import e, { NextFunction, Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import AppError from "../../helpers/appError";
 import { HTTP_STATUS } from "../../utils/httpStatus";
 import { sendResponse } from "../../utils/sendResponse";
