@@ -3,6 +3,7 @@ import userRouter from "../modules/user/user.routes";
 import authRouter from "../modules/auth/auth.routes";
 import otpRoute from "../modules/otp/otp.routes";
 import parcelRouter from "../modules/parcel/parcel.routes";
+import statsRouter from "../modules/stats/stats.routes";
 
 const router = express.Router();
 
@@ -22,6 +23,10 @@ const moduleRoutes = [
   {
     path: "/parcels",
     route: parcelRouter,
+  },
+  {
+    path: "/stats",
+    route: statsRouter,
   },
 ];
 
