@@ -1,0 +1,2868 @@
+{
+	"info": {
+		"_postman_id": "1cc2a3a2-48e5-4083-a381-6b90115b53de",
+		"name": "ph-assigmnet-5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27592081"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "emdadul2580@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Test123@#",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/auth/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "emdadul2580@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Test123@#",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODg4ZGViNmVkZTIyOTU5MzI0MTc3MjYiLCJlbWFpbCI6ImVtZGFkdWwyNTgwQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NDAzOTQ2MSwiZXhwIjoxNzU0NjQ0MjYxfQ.mh62ycYcrSHtbAU96wEMPAlSaQ6zlMfC0QIkYDimukc; Path=/; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODg4ZGViNmVkZTIyOTU5MzI0MTc3MjYiLCJlbWFpbCI6ImVtZGFkdWwyNTgwQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NDAzOTQ2MSwiZXhwIjoxNzU2NjMxNDYxfQ.Iqse6fI64P_EF2iCHqUR7cxp0TDsDuHnWahpPnw85x8; Path=/; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1246"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4de-TX5atZpaeUfk2z1IsDxK5i4L4Sk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:11:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"User logged in successfully.\",\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODg4ZGViNmVkZTIyOTU5MzI0MTc3MjYiLCJlbWFpbCI6ImVtZGFkdWwyNTgwQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NDAzOTQ2MSwiZXhwIjoxNzU0NjQ0MjYxfQ.mh62ycYcrSHtbAU96wEMPAlSaQ6zlMfC0QIkYDimukc\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODg4ZGViNmVkZTIyOTU5MzI0MTc3MjYiLCJlbWFpbCI6ImVtZGFkdWwyNTgwQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NDAzOTQ2MSwiZXhwIjoxNzU2NjMxNDYxfQ.Iqse6fI64P_EF2iCHqUR7cxp0TDsDuHnWahpPnw85x8\",\n        \"user\": {\n            \"_id\": \"6888deb6ede2295932417726\",\n            \"name\": \"Emdadul Hoque Emon 1074\",\n            \"email\": \"emdadul2580@gmail.com\",\n            \"picture\": \"https://lh3.googleusercontent.com/a/ACg8ocIIcsA6Wh8SMi0l6ULD8paQkyUPLeo6olouf_jO_iESGm2PqSXv=s96-c\",\n            \"role\": \"ADMIN\",\n            \"isBlocked\": false,\n            \"isVerified\": true,\n            \"isDeleted\": false,\n            \"auths\": [\n                {\n                    \"provider\": \"GOOGLE\",\n                    \"providerId\": \"109167906266727386223\",\n                    \"_id\": \"6888deb6ede2295932417727\"\n                },\n                {\n                    \"_id\": \"688c84a4be23fd3f96d6ecd6\",\n                    \"provider\": \"CREDENTIALS\",\n                    \"providerId\": \"emdadul2580@gmail.com\"\n                }\n            ],\n            \"orders\": [],\n            \"createdAt\": \"2025-07-29T14:46:14.664Z\",\n            \"updatedAt\": \"2025-07-30T10:26:29.303Z\",\n            \"password\": \"$2b$13$P0B16YlNtVfXeSQf.PuCbegE/hPKVvkidDT/B7PXWqiLFA7b4Nt3S\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "change password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "oldPassword",
+									"value": "Test123@",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "Test123@#",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/auth/change-password",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "change password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "oldPassword",
+											"value": "Test123@#",
+											"type": "text"
+										},
+										{
+											"key": "newPassword",
+											"value": "Test123@",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/auth/change-password",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"change-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-cEEsOQFI0H77T1JFz5Li8L2rYmk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:14:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"password change successfully.\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "forget password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"emdadul2580@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/auth/forget-password",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"forget-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "forget password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"emdadul2580@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/auth/forget-password",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"forget-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "96"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"60-PxoEsvMnhvsFVb6ssUDSQv/S+jU\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:14:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Password reset link sent successfully.\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"6888deb6ede2295932417726\",\r\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODg4ZGViNmVkZTIyOTU5MzI0MTc3MjYiLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImVtZGFkdWwyNTgwQGdtYWlsLmNvbSIsImlhdCI6MTc1NDAzOTY4MiwiZXhwIjoxNzU0MDQwMjgyfQ.U3zhDrfq0l95QbUEMM_7vubsCTTrFwNtTRdU8W4aClc\",\r\n    \"newPassword\" : \"Test123@#\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/auth/reset-password",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "reset password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"6888deb6ede2295932417726\",\r\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODg4ZGViNmVkZTIyOTU5MzI0MTc3MjYiLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImVtZGFkdWwyNTgwQGdtYWlsLmNvbSIsImlhdCI6MTc1NDAzOTY4MiwiZXhwIjoxNzU0MDQwMjgyfQ.U3zhDrfq0l95QbUEMM_7vubsCTTrFwNtTRdU8W4aClc\",\r\n    \"newPassword\" : \"Test123@#\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/auth/reset-password",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"reset-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"56-GV9HanpI6SQgC9XxXcddxP9pIDQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:16:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"password reset successfully.\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "refresh token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "oldPassword",
+									"value": "Test123@",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "Test123@#",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/auth/refresh-token",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "refresh token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "oldPassword",
+											"value": "Test123@",
+											"type": "text"
+										},
+										{
+											"key": "newPassword",
+											"value": "Test123@#",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/auth/refresh-token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"refresh-token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODg4ZGViNmVkZTIyOTU5MzI0MTc3MjYiLCJlbWFpbCI6ImVtZGFkdWwyNTgwQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NDAzOTgxMSwiZXhwIjoxNzU0NjQ0NjExfQ.aP39Dh1wKTPRhCUW0HtzcZJnKA7DqEGu5BxtVk8MblY; Path=/; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODg4ZGViNmVkZTIyOTU5MzI0MTc3MjYiLCJlbWFpbCI6ImVtZGFkdWwyNTgwQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NDAzOTgxMSwiZXhwIjoxNzU2NjMxODExfQ.k3N11I5ljNJOB7F3maOs9fbA526zzQ63ERg3xEcPkWU; Path=/; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1174"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"496-7+Ce1GcG/8aZVLHpebMWXQz4DUg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:16:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Tokens refreshed successfully.\",\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODg4ZGViNmVkZTIyOTU5MzI0MTc3MjYiLCJlbWFpbCI6ImVtZGFkdWwyNTgwQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NDAzOTgxMSwiZXhwIjoxNzU0NjQ0NjExfQ.aP39Dh1wKTPRhCUW0HtzcZJnKA7DqEGu5BxtVk8MblY\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODg4ZGViNmVkZTIyOTU5MzI0MTc3MjYiLCJlbWFpbCI6ImVtZGFkdWwyNTgwQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NDAzOTgxMSwiZXhwIjoxNzU2NjMxODExfQ.k3N11I5ljNJOB7F3maOs9fbA526zzQ63ERg3xEcPkWU\",\n        \"user\": {\n            \"_id\": \"6888deb6ede2295932417726\",\n            \"name\": \"Emdadul Hoque Emon 1074\",\n            \"email\": \"emdadul2580@gmail.com\",\n            \"picture\": \"https://lh3.googleusercontent.com/a/ACg8ocIIcsA6Wh8SMi0l6ULD8paQkyUPLeo6olouf_jO_iESGm2PqSXv=s96-c\",\n            \"role\": \"ADMIN\",\n            \"isBlocked\": false,\n            \"isVerified\": true,\n            \"isDeleted\": false,\n            \"auths\": [\n                {\n                    \"provider\": \"GOOGLE\",\n                    \"providerId\": \"109167906266727386223\",\n                    \"_id\": \"6888deb6ede2295932417727\"\n                },\n                {\n                    \"_id\": \"688c8603fc210849271ddd7c\",\n                    \"provider\": \"CREDENTIALS\",\n                    \"providerId\": \"emdadul2580@gmail.com\"\n                }\n            ],\n            \"orders\": [],\n            \"createdAt\": \"2025-07-29T14:46:14.664Z\",\n            \"updatedAt\": \"2025-08-01T09:16:41.340Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "set password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is an object with success, statusCode, message, and data properties\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an('object').that.has.all.keys('success', 'message', 'errorSources', 'err', 'stack');\r",
+									"    pm.expect(jsonData.success).to.be.a('boolean');\r",
+									"    pm.expect(jsonData.err).to.have.property('statusCode').that.is.a('number');\r",
+									"});\r",
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>Success</th>\r",
+									"        <th>Status Code</th>\r",
+									"        <th>Message</th>\r",
+									"        <th>Data</th>\r",
+									"    </tr>\r",
+									"    <tr>\r",
+									"        <td>{{response.success}}</td>\r",
+									"        <td>{{response.err.statusCode}}</td>\r",
+									"        <td>{{response.message}}</td>\r",
+									"        <td>{{response.data}}</td>\r",
+									"    </tr>\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    var res = pm.response.json();\r",
+									"    var visualizerData = {\r",
+									"        success: res.success,\r",
+									"        message: res.message,\r",
+									"        data: res.data || \"N/A\", // Assuming 'data' is not present in the response\r",
+									"        err: {\r",
+									"            statusCode: res.err.statusCode\r",
+									"        }\r",
+									"    };\r",
+									"\r",
+									"    return { response: visualizerData };\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "emon0178728@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "Test123@#",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/auth/set-password",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"set-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "test@test.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "sdfsdfsd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/auth/logout",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "logout",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "test@test.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "sdfsdfsd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/auth/logout",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "accessToken=; Max-Age=0; Path=/; Expires=Fri, 01 Aug 2025 09:23:29 GMT; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=; Max-Age=0; Path=/; Expires=Fri, 01 Aug 2025 09:23:29 GMT; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-ysqcfjyEhsjLge1asipHB03dKM8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:23:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"User logged out successfully.\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			],
+			"description": "Cookies is use to authenticate users request. No need to pass headers or authorization token. Just login with proper credentials"
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"test2\",\r\n    \"email\":\"test2@test.com\",\r\n    \"password\": \"Test123@#\",\r\n    \"phone\":\"+8801787286529\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/user",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						},
+						"description": "Cookies is use to authenticate users request. No need to pass headers or authorization token. Just login with proper credentials"
+					},
+					"response": [
+						{
+							"name": "create user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"test2\",\r\n    \"email\":\"test2@test.com\",\r\n    \"password\": \"Test123@#\",\r\n    \"phone\":\"+8801787286529\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"user"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "516"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"204-rpIovUUlfGjNGUIKTZtNrsTlwvA\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:24:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 201,\n    \"message\": \"User created successfully.\",\n    \"data\": {\n        \"name\": \"test2\",\n        \"email\": \"test2@test.com\",\n        \"phone\": \"+8801787286529\",\n        \"password\": \"$2b$13$So9IbEiD4beputAtWiHr5OHSEaDAVCi.yG37Rhh39GcEUzVvYZ5E6\",\n        \"role\": \"RECEIVER\",\n        \"isBlocked\": false,\n        \"isVerified\": false,\n        \"isDeleted\": false,\n        \"auths\": [\n            {\n                \"provider\": \"CREDENTIALS\",\n                \"providerId\": \"test2@test.com\",\n                \"_id\": \"688c87c6026ca49a2db7c402\"\n            }\n        ],\n        \"orders\": [],\n        \"_id\": \"688c87c6026ca49a2db7c401\",\n        \"createdAt\": \"2025-08-01T09:24:22.636Z\",\n        \"updatedAt\": \"2025-08-01T09:24:22.636Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get all users [admin]",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"test\",\r\n    \"email\":\"test@test.com\",\r\n    \"password\": \"test123@#\",\r\n    \"phone\":\"+8801787286529\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/user",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get all users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"test\",\r\n    \"email\":\"test@test.com\",\r\n    \"password\": \"test123@#\",\r\n    \"phone\":\"+8801787286529\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1918"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"77e-h9H4KPWl0w6Jgg0/6XEA3BSS0Tg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:24:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"All users retrieved successfully.\",\n    \"data\": {\n        \"users\": [\n            {\n                \"_id\": \"6888c4b9b66b9f0e0a97f7c9\",\n                \"name\": \"Emdadul Hoque Emon\",\n                \"email\": \"test@test.com\",\n                \"phone\": \"+8801787286529\",\n                \"role\": \"SENDER\",\n                \"isBlocked\": false,\n                \"isVerified\": true,\n                \"isDeleted\": false,\n                \"auths\": [\n                    {\n                        \"provider\": \"CREDENTIALS\",\n                        \"providerId\": \"test@test.com\",\n                        \"_id\": \"6888c4b9b66b9f0e0a97f7ca\"\n                    }\n                ],\n                \"orders\": [],\n                \"createdAt\": \"2025-07-29T12:55:21.653Z\",\n                \"updatedAt\": \"2025-07-31T10:35:13.230Z\"\n            },\n            {\n                \"_id\": \"6888ddf300b939453748f629\",\n                \"name\": \"Bayjid Afride\",\n                \"email\": \"emon0178728@gmail.com\",\n                \"picture\": \"https://lh3.googleusercontent.com/a/ACg8ocIbwBZgHQZ6Mr-Qx53H3LvJBMwdENnIMNQE06-OV9txHnq52w=s96-c\",\n                \"role\": \"RECEIVER\",\n                \"isBlocked\": false,\n                \"isVerified\": true,\n                \"isDeleted\": false,\n                \"auths\": [\n                    {\n                        \"provider\": \"GOOGLE\",\n                        \"providerId\": \"117458859016397674736\",\n                        \"_id\": \"6888ddf300b939453748f62a\"\n                    }\n                ],\n                \"orders\": [],\n                \"createdAt\": \"2025-07-29T14:42:59.458Z\",\n                \"updatedAt\": \"2025-07-29T14:42:59.458Z\"\n            },\n            {\n                \"_id\": \"6888deb6ede2295932417726\",\n                \"name\": \"Emdadul Hoque Emon 1074\",\n                \"email\": \"emdadul2580@gmail.com\",\n                \"picture\": \"https://lh3.googleusercontent.com/a/ACg8ocIIcsA6Wh8SMi0l6ULD8paQkyUPLeo6olouf_jO_iESGm2PqSXv=s96-c\",\n                \"role\": \"ADMIN\",\n                \"isBlocked\": false,\n                \"isVerified\": true,\n                \"isDeleted\": false,\n                \"auths\": [\n                    {\n                        \"provider\": \"GOOGLE\",\n                        \"providerId\": \"109167906266727386223\",\n                        \"_id\": \"6888deb6ede2295932417727\"\n                    },\n                    {\n                        \"_id\": \"688c87e7026ca49a2db7c40c\",\n                        \"provider\": \"CREDENTIALS\",\n                        \"providerId\": \"emdadul2580@gmail.com\"\n                    }\n                ],\n                \"orders\": [],\n                \"createdAt\": \"2025-07-29T14:46:14.664Z\",\n                \"updatedAt\": \"2025-08-01T09:16:41.340Z\"\n            },\n            {\n                \"_id\": \"688c87c6026ca49a2db7c401\",\n                \"name\": \"test2\",\n                \"email\": \"test2@test.com\",\n                \"phone\": \"+8801787286529\",\n                \"role\": \"RECEIVER\",\n                \"isBlocked\": false,\n                \"isVerified\": false,\n                \"isDeleted\": false,\n                \"auths\": [\n                    {\n                        \"provider\": \"CREDENTIALS\",\n                        \"providerId\": \"test2@test.com\",\n                        \"_id\": \"688c87c6026ca49a2db7c402\"\n                    }\n                ],\n                \"orders\": [],\n                \"createdAt\": \"2025-08-01T09:24:22.636Z\",\n                \"updatedAt\": \"2025-08-01T09:24:22.636Z\"\n            }\n        ],\n        \"meta\": {\n            \"total\": 4,\n            \"page\": 1,\n            \"limit\": 10,\n            \"totalPages\": 1\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get single user [admin]",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"test\",\r\n    \"email\":\"test@test.com\",\r\n    \"password\": \"test123@#\",\r\n    \"phone\":\"+8801787286529\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/user/6888c4b9b66b9f0e0a97f7c9",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"6888c4b9b66b9f0e0a97f7c9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get single user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"test\",\r\n    \"email\":\"test@test.com\",\r\n    \"password\": \"test123@#\",\r\n    \"phone\":\"+8801787286529\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/user/6888c4b9b66b9f0e0a97f7c9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"6888c4b9b66b9f0e0a97f7c9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "452"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c4-oZ6sNuEJuKbyN6cHB/h8dKSRHU8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:25:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"User retrieved successfully.\",\n    \"data\": {\n        \"_id\": \"6888c4b9b66b9f0e0a97f7c9\",\n        \"name\": \"Emdadul Hoque Emon\",\n        \"email\": \"test@test.com\",\n        \"phone\": \"+8801787286529\",\n        \"role\": \"SENDER\",\n        \"isBlocked\": false,\n        \"isVerified\": true,\n        \"isDeleted\": false,\n        \"auths\": [\n            {\n                \"provider\": \"CREDENTIALS\",\n                \"providerId\": \"test@test.com\",\n                \"_id\": \"6888c4b9b66b9f0e0a97f7ca\"\n            }\n        ],\n        \"orders\": [],\n        \"createdAt\": \"2025-07-29T12:55:21.653Z\",\n        \"updatedAt\": \"2025-07-31T10:35:13.230Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Test account 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/user/6888c4b9b66b9f0e0a97f7c9",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"6888c4b9b66b9f0e0a97f7c9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update user",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Test account 2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/user/6888c4b9b66b9f0e0a97f7c9",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"6888c4b9b66b9f0e0a97f7c9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "520"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"208-KW2r8aME0NyOFYpt2n1oOzIfy+o\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:26:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"User updated successfully.\",\n    \"data\": {\n        \"_id\": \"6888c4b9b66b9f0e0a97f7c9\",\n        \"name\": \"Test account 2\",\n        \"email\": \"test@test.com\",\n        \"phone\": \"+8801787286529\",\n        \"password\": \"$2b$10$IYBZ6B.bQvnnWhmrkHbv3uXYhO14gbFhS16/Nj5tb5YWOvX8uIO6W\",\n        \"role\": \"SENDER\",\n        \"isBlocked\": false,\n        \"isVerified\": true,\n        \"isDeleted\": false,\n        \"auths\": [\n            {\n                \"provider\": \"CREDENTIALS\",\n                \"providerId\": \"test@test.com\",\n                \"_id\": \"6888c4b9b66b9f0e0a97f7ca\"\n            }\n        ],\n        \"orders\": [],\n        \"createdAt\": \"2025-07-29T12:55:21.653Z\",\n        \"updatedAt\": \"2025-08-01T09:26:38.481Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/user/6888c4b9b66b9f0e0a97f7c9",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"6888c4b9b66b9f0e0a97f7c9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete user",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/user/6888c4b9b66b9f0e0a97f7c9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"6888c4b9b66b9f0e0a97f7c9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "519"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"207-s//kxs+NENxSg4JXaG/Y4uyj1K0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:27:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"User deleted successfully.\",\n    \"data\": {\n        \"_id\": \"6888c4b9b66b9f0e0a97f7c9\",\n        \"name\": \"Test account 2\",\n        \"email\": \"test@test.com\",\n        \"phone\": \"+8801787286529\",\n        \"password\": \"$2b$10$IYBZ6B.bQvnnWhmrkHbv3uXYhO14gbFhS16/Nj5tb5YWOvX8uIO6W\",\n        \"role\": \"SENDER\",\n        \"isBlocked\": false,\n        \"isVerified\": true,\n        \"isDeleted\": true,\n        \"auths\": [\n            {\n                \"provider\": \"CREDENTIALS\",\n                \"providerId\": \"test@test.com\",\n                \"_id\": \"6888c4b9b66b9f0e0a97f7ca\"\n            }\n        ],\n        \"orders\": [],\n        \"createdAt\": \"2025-07-29T12:55:21.653Z\",\n        \"updatedAt\": \"2025-08-01T09:27:02.423Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "otp",
+			"item": [
+				{
+					"name": "send otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "emdadul2580@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/otp/send",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"otp",
+								"send"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "send otp",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "emdadul2580@gmail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/otp/send",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"otp",
+										"send"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "80"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"50-gvK7y77jE0HD2Xnz9gGMDDkBVlY\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 10:50:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"OTP sent successfully.\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "verify otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"emdadul2580@gmail.com\",\r\n    \"otp\":\"459660\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/otp/verify",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"otp",
+								"verify"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "verify otp",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"emdadul2580@gmail.com\",\r\n    \"otp\":\"459660\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/v1/otp/verify",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"otp",
+										"verify"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "84"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"54-EnrjoCJ3TkHCOLpvlGbis82MsPc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 10:52:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"OTP verified successfully.\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "parcel",
+			"item": [
+				{
+					"name": "create parcel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\r\n  \"receiver\": \"688c87c6026ca49a2db7c401\",\r\n\r\n  \"paymentMethod\": \"COD\",\r\n  \"paymentStatus\": \"UNPAID\",\r\n  \"paymentAmount\": 250,\r\n  \"deliveryFee\": 40,\r\n\r\n  \"weight\": 1.2,\r\n  \"length\": 10,\r\n  \"width\": 10,\r\n  \"height\": 5,\r\n  \"description\": \"Books and documents\",\r\n\r\n  \"pickupDate\": \"2025-08-01\",\r\n  \"expectedDeliveryDate\": \"2025-08-03\",\r\n  \"deliveryType\": \"STANDARD\",\r\n\r\n  \"pickupCity\": \"Dhaka\",\r\n  \"pickupAddress\": \"Uttara, Sector 4\",\r\n  \"deliveryCity\": \"Chittagong\",\r\n  \"deliveryAddress\": \"GEC Circle\",\r\n  \"deliveryPhone\": \"01712345678\",\r\n\r\n  \"itemNames\": [\"Book\", \"Notebook\"],\r\n  \"itemQuantities\": [2, 3],\r\n  \"itemValues\": [100, 50]\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/parcels",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"parcels"
+							]
+						},
+						"description": "Cookies is use to authenticate users request. No need to pass headers or authorization token. Just login with proper credentials"
+					},
+					"response": [
+						{
+							"name": "create parcel",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\r\n  \"receiver\": \"688c87c6026ca49a2db7c401\",\r\n\r\n  \"paymentMethod\": \"COD\",\r\n  \"paymentStatus\": \"UNPAID\",\r\n  \"paymentAmount\": 250,\r\n  \"deliveryFee\": 40,\r\n\r\n  \"weight\": 1.2,\r\n  \"length\": 10,\r\n  \"width\": 10,\r\n  \"height\": 5,\r\n  \"description\": \"Books and documents\",\r\n\r\n  \"pickupDate\": \"2025-08-01\",\r\n  \"expectedDeliveryDate\": \"2025-08-03\",\r\n  \"deliveryType\": \"STANDARD\",\r\n\r\n  \"pickupCity\": \"Dhaka\",\r\n  \"pickupAddress\": \"Uttara, Sector 4\",\r\n  \"deliveryCity\": \"Chittagong\",\r\n  \"deliveryAddress\": \"GEC Circle\",\r\n  \"deliveryPhone\": \"01712345678\",\r\n\r\n  \"itemNames\": [\"Book\", \"Notebook\"],\r\n  \"itemQuantities\": [2, 3],\r\n  \"itemValues\": [100, 50]\r\n\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/parcels",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"parcels"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1327"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"52f-PBmFZSpFa0lGDLIMXa4I8yMYAMI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:28:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 201,\n    \"message\": \"Parcel created successfully.\",\n    \"data\": {\n        \"trackingId\": \"TRK-20250801-952VR2\",\n        \"paymentInfo\": {\n            \"method\": \"COD\",\n            \"status\": \"UNPAID\",\n            \"amount\": 250,\n            \"deleveryFee\": 63\n        },\n        \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\n        \"receiver\": \"688c87c6026ca49a2db7c401\",\n        \"packageDetails\": {\n            \"weight\": 1.2,\n            \"dimensions\": {\n                \"length\": 10,\n                \"width\": 10,\n                \"height\": 5\n            },\n            \"description\": \"Books and documents\",\n            \"items\": [\n                {\n                    \"name\": \"Book\",\n                    \"quantity\": 2,\n                    \"value\": 100,\n                    \"_id\": \"688c88b9121fb5f75b3bbaab\"\n                },\n                {\n                    \"name\": \"Notebook\",\n                    \"quantity\": 3,\n                    \"value\": 50,\n                    \"_id\": \"688c88b9121fb5f75b3bbaac\"\n                }\n            ],\n            \"images\": []\n        },\n        \"deliveryInfo\": {\n            \"pickupDate\": \"2025-08-01T00:00:00.000Z\",\n            \"expectedDeliveryDate\": \"2025-08-03T00:00:00.000Z\",\n            \"deliveryType\": \"STANDARD\",\n            \"currentLocation\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    0,\n                    0\n                ],\n                \"address\": \"\"\n            },\n            \"pickupAddress\": {\n                \"city\": \"Dhaka\",\n                \"address\": \"Uttara, Sector 4\"\n            },\n            \"deliveryAddress\": {\n                \"city\": \"Chittagong\",\n                \"address\": \"GEC Circle\",\n                \"phone\": \"01712345678\"\n            }\n        },\n        \"status\": \"PENDING\",\n        \"statusLogs\": [\n            {\n                \"status\": \"PENDING\",\n                \"note\": \"Parcel created and waiting for approval\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-08-01T09:28:25.422Z\",\n                \"_id\": \"688c88b9121fb5f75b3bbaad\"\n            }\n        ],\n        \"isDeleted\": false,\n        \"reviews\": [],\n        \"initiatedBy\": \"6888deb6ede2295932417726\",\n        \"deliveryAttempt\": 0,\n        \"_id\": \"688c88b9121fb5f75b3bbaaa\",\n        \"createdAt\": \"2025-08-01T09:28:25.433Z\",\n        \"updatedAt\": \"2025-08-01T09:28:25.433Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get all parcel [admin]",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\r\n  \"receiver\": \"6888ddf300b939453748f629\",\r\n\r\n  \"paymentMethod\": \"COD\",\r\n  \"paymentStatus\": \"UNPAID\",\r\n  \"paymentAmount\": 250,\r\n  \"deliveryFee\": 40,\r\n\r\n  \"weight\": 1.2,\r\n  \"length\": 10,\r\n  \"width\": 10,\r\n  \"height\": 5,\r\n  \"description\": \"Books and documents\",\r\n\r\n  \"pickupDate\": \"2025-08-01\",\r\n  \"expectedDeliveryDate\": \"2025-08-03\",\r\n  \"deliveryType\": \"STANDARD\",\r\n\r\n  \"pickupCity\": \"Dhaka\",\r\n  \"pickupAddress\": \"Uttara, Sector 4\",\r\n  \"deliveryCity\": \"Chittagong\",\r\n  \"deliveryAddress\": \"GEC Circle\",\r\n  \"deliveryPhone\": \"01712345678\",\r\n\r\n  \"itemNames\": [\"Book\", \"Notebook\"],\r\n  \"itemQuantities\": [2, 3],\r\n  \"itemValues\": [100, 50]\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/parcels?limit=10&page=1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"parcels"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get all parcel [admin]",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\r\n  \"receiver\": \"6888ddf300b939453748f629\",\r\n\r\n  \"paymentMethod\": \"COD\",\r\n  \"paymentStatus\": \"UNPAID\",\r\n  \"paymentAmount\": 250,\r\n  \"deliveryFee\": 40,\r\n\r\n  \"weight\": 1.2,\r\n  \"length\": 10,\r\n  \"width\": 10,\r\n  \"height\": 5,\r\n  \"description\": \"Books and documents\",\r\n\r\n  \"pickupDate\": \"2025-08-01\",\r\n  \"expectedDeliveryDate\": \"2025-08-03\",\r\n  \"deliveryType\": \"STANDARD\",\r\n\r\n  \"pickupCity\": \"Dhaka\",\r\n  \"pickupAddress\": \"Uttara, Sector 4\",\r\n  \"deliveryCity\": \"Chittagong\",\r\n  \"deliveryAddress\": \"GEC Circle\",\r\n  \"deliveryPhone\": \"01712345678\",\r\n\r\n  \"itemNames\": [\"Book\", \"Notebook\"],\r\n  \"itemQuantities\": [2, 3],\r\n  \"itemValues\": [100, 50]\r\n\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/parcels?limit=10&page=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"parcels"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "5965"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"174d-UzlcQWoHIyLRNFfrc2K5aGiVrjM\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:28:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Parcels retrieved successfully.\",\n    \"data\": {\n        \"parcels\": [\n            {\n                \"paymentInfo\": {\n                    \"method\": \"COD\",\n                    \"status\": \"UNPAID\",\n                    \"amount\": 250,\n                    \"deleveryFee\": 63\n                },\n                \"packageDetails\": {\n                    \"dimensions\": {\n                        \"length\": 10,\n                        \"width\": 10,\n                        \"height\": 5\n                    },\n                    \"weight\": 1.2,\n                    \"description\": \"Books and documents\",\n                    \"items\": [\n                        {\n                            \"name\": \"Book\",\n                            \"quantity\": 2,\n                            \"value\": 100,\n                            \"_id\": \"688b620b8668b145ac97992a\"\n                        },\n                        {\n                            \"name\": \"Notebook\",\n                            \"quantity\": 3,\n                            \"value\": 50,\n                            \"_id\": \"688b620b8668b145ac97992b\"\n                        }\n                    ],\n                    \"images\": []\n                },\n                \"deliveryInfo\": {\n                    \"currentLocation\": {\n                        \"type\": \"Point\",\n                        \"coordinates\": [\n                            0,\n                            0\n                        ],\n                        \"address\": \"\"\n                    },\n                    \"pickupAddress\": {\n                        \"city\": \"Dhaka\",\n                        \"address\": \"Uttara, Sector 4\"\n                    },\n                    \"deliveryAddress\": {\n                        \"city\": \"Chittagong\",\n                        \"address\": \"GEC Circle\",\n                        \"phone\": \"01712345678\"\n                    },\n                    \"pickupDate\": \"2025-08-01T00:00:00.000Z\",\n                    \"expectedDeliveryDate\": \"2025-08-03T00:00:00.000Z\",\n                    \"deliveryType\": \"STANDARD\"\n                },\n                \"_id\": \"688b620b8668b145ac979929\",\n                \"trackingId\": \"TRK-20250731-ZIF2SF\",\n                \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\n                \"receiver\": \"6888ddf300b939453748f629\",\n                \"status\": \"CANCELED\",\n                \"statusLogs\": [\n                    {\n                        \"status\": \"PENDING\",\n                        \"note\": \"Parcel created and waiting for approval\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-07-31T12:31:07.677Z\",\n                        \"_id\": \"688b620b8668b145ac97992c\"\n                    },\n                    {\n                        \"status\": \"CANCELED\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-07-31T12:31:25.705Z\",\n                        \"_id\": \"688b621d8668b145ac979932\"\n                    },\n                    {\n                        \"status\": \"BLOCKED\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-07-31T12:44:43.807Z\",\n                        \"_id\": \"688b653bf8586c9cc5c4bd3a\"\n                    }\n                ],\n                \"isDeleted\": false,\n                \"reviews\": [],\n                \"initiatedBy\": \"6888deb6ede2295932417726\",\n                \"deliveryAttempt\": 0,\n                \"createdAt\": \"2025-07-31T12:31:07.690Z\",\n                \"updatedAt\": \"2025-07-31T12:44:43.814Z\"\n            },\n            {\n                \"paymentInfo\": {\n                    \"method\": \"COD\",\n                    \"status\": \"UNPAID\",\n                    \"amount\": 250,\n                    \"deleveryFee\": 63\n                },\n                \"packageDetails\": {\n                    \"dimensions\": {\n                        \"length\": 10,\n                        \"width\": 10,\n                        \"height\": 5\n                    },\n                    \"weight\": 1.2,\n                    \"description\": \"Books and documents\",\n                    \"items\": [\n                        {\n                            \"name\": \"Book\",\n                            \"quantity\": 2,\n                            \"value\": 100,\n                            \"_id\": \"688b9903c51b43283fa17b7e\"\n                        },\n                        {\n                            \"name\": \"Notebook\",\n                            \"quantity\": 3,\n                            \"value\": 50,\n                            \"_id\": \"688b9903c51b43283fa17b7f\"\n                        }\n                    ],\n                    \"images\": []\n                },\n                \"deliveryInfo\": {\n                    \"currentLocation\": {\n                        \"type\": \"Point\",\n                        \"coordinates\": [\n                            0,\n                            0\n                        ],\n                        \"address\": \"\"\n                    },\n                    \"pickupAddress\": {\n                        \"city\": \"Dhaka\",\n                        \"address\": \"Uttara, Sector 4\"\n                    },\n                    \"deliveryAddress\": {\n                        \"city\": \"Chittagong\",\n                        \"address\": \"GEC Circle\",\n                        \"phone\": \"01712345678\"\n                    },\n                    \"pickupDate\": \"2025-08-01T00:00:00.000Z\",\n                    \"expectedDeliveryDate\": \"2025-08-03T00:00:00.000Z\",\n                    \"deliveryType\": \"STANDARD\"\n                },\n                \"_id\": \"688b9903c51b43283fa17b7d\",\n                \"trackingId\": \"TRK-20250731-2075JZ\",\n                \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\n                \"receiver\": \"6888ddf300b939453748f629\",\n                \"status\": \"RETURNED_INITIATED\",\n                \"statusLogs\": [\n                    {\n                        \"status\": \"PENDING\",\n                        \"note\": \"Parcel created and waiting for approval\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-07-31T16:25:39.278Z\",\n                        \"_id\": \"688b9903c51b43283fa17b80\"\n                    },\n                    {\n                        \"status\": \"APPROVED\",\n                        \"note\": \"a rider is assigned to pick up this parcel\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-08-01T06:54:12.541Z\",\n                        \"_id\": \"688c6494a5ad1ea0e9564e1a\"\n                    },\n                    {\n                        \"status\": \"DELIVERED\",\n                        \"note\": \"Parcel is safely and successfully delivered to receiver.\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-08-01T06:54:43.948Z\",\n                        \"_id\": \"688c64b3a5ad1ea0e9564e21\"\n                    },\n                    {\n                        \"status\": \"RETURNED_INITIATED\",\n                        \"note\": \"Wrong product \",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-08-01T06:58:10.150Z\",\n                        \"_id\": \"688c6582ef48d37e42e6a12c\"\n                    }\n                ],\n                \"isDeleted\": false,\n                \"reviews\": [],\n                \"initiatedBy\": \"6888deb6ede2295932417726\",\n                \"deliveryAttempt\": 0,\n                \"createdAt\": \"2025-07-31T16:25:39.291Z\",\n                \"updatedAt\": \"2025-08-01T06:58:10.156Z\"\n            },\n            {\n                \"paymentInfo\": {\n                    \"method\": \"COD\",\n                    \"status\": \"UNPAID\",\n                    \"amount\": 250,\n                    \"deleveryFee\": 63\n                },\n                \"packageDetails\": {\n                    \"dimensions\": {\n                        \"length\": 10,\n                        \"width\": 10,\n                        \"height\": 5\n                    },\n                    \"weight\": 1.2,\n                    \"description\": \"Books and documents\",\n                    \"items\": [\n                        {\n                            \"name\": \"Book\",\n                            \"quantity\": 2,\n                            \"value\": 100,\n                            \"_id\": \"688c61fa4c21a3f0586aa8c2\"\n                        },\n                        {\n                            \"name\": \"Notebook\",\n                            \"quantity\": 3,\n                            \"value\": 50,\n                            \"_id\": \"688c61fa4c21a3f0586aa8c3\"\n                        }\n                    ],\n                    \"images\": []\n                },\n                \"deliveryInfo\": {\n                    \"currentLocation\": {\n                        \"type\": \"Point\",\n                        \"coordinates\": [\n                            0,\n                            0\n                        ],\n                        \"address\": \"\"\n                    },\n                    \"pickupAddress\": {\n                        \"city\": \"Dhaka\",\n                        \"address\": \"Uttara, Sector 4\"\n                    },\n                    \"deliveryAddress\": {\n                        \"city\": \"Chittagong\",\n                        \"address\": \"GEC Circle\",\n                        \"phone\": \"01712345678\"\n                    },\n                    \"pickupDate\": \"2025-08-01T00:00:00.000Z\",\n                    \"expectedDeliveryDate\": \"2025-08-03T00:00:00.000Z\",\n                    \"deliveryType\": \"STANDARD\"\n                },\n                \"_id\": \"688c61fa4c21a3f0586aa8c1\",\n                \"trackingId\": \"TRK-20250801-HGA62J\",\n                \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\n                \"receiver\": \"6888ddf300b939453748f629\",\n                \"status\": \"PENDING\",\n                \"statusLogs\": [\n                    {\n                        \"status\": \"PENDING\",\n                        \"note\": \"Parcel created and waiting for approval\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-08-01T06:43:06.911Z\",\n                        \"_id\": \"688c61fa4c21a3f0586aa8c4\"\n                    }\n                ],\n                \"isDeleted\": false,\n                \"reviews\": [],\n                \"initiatedBy\": \"6888deb6ede2295932417726\",\n                \"deliveryAttempt\": 0,\n                \"createdAt\": \"2025-08-01T06:43:06.927Z\",\n                \"updatedAt\": \"2025-08-01T06:43:06.927Z\"\n            },\n            {\n                \"paymentInfo\": {\n                    \"method\": \"COD\",\n                    \"status\": \"UNPAID\",\n                    \"amount\": 250,\n                    \"deleveryFee\": 63\n                },\n                \"packageDetails\": {\n                    \"dimensions\": {\n                        \"length\": 10,\n                        \"width\": 10,\n                        \"height\": 5\n                    },\n                    \"weight\": 1.2,\n                    \"description\": \"Books and documents\",\n                    \"items\": [\n                        {\n                            \"name\": \"Book\",\n                            \"quantity\": 2,\n                            \"value\": 100,\n                            \"_id\": \"688c88b9121fb5f75b3bbaab\"\n                        },\n                        {\n                            \"name\": \"Notebook\",\n                            \"quantity\": 3,\n                            \"value\": 50,\n                            \"_id\": \"688c88b9121fb5f75b3bbaac\"\n                        }\n                    ],\n                    \"images\": []\n                },\n                \"deliveryInfo\": {\n                    \"currentLocation\": {\n                        \"type\": \"Point\",\n                        \"coordinates\": [\n                            0,\n                            0\n                        ],\n                        \"address\": \"\"\n                    },\n                    \"pickupAddress\": {\n                        \"city\": \"Dhaka\",\n                        \"address\": \"Uttara, Sector 4\"\n                    },\n                    \"deliveryAddress\": {\n                        \"city\": \"Chittagong\",\n                        \"address\": \"GEC Circle\",\n                        \"phone\": \"01712345678\"\n                    },\n                    \"pickupDate\": \"2025-08-01T00:00:00.000Z\",\n                    \"expectedDeliveryDate\": \"2025-08-03T00:00:00.000Z\",\n                    \"deliveryType\": \"STANDARD\"\n                },\n                \"_id\": \"688c88b9121fb5f75b3bbaaa\",\n                \"trackingId\": \"TRK-20250801-952VR2\",\n                \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\n                \"receiver\": \"688c87c6026ca49a2db7c401\",\n                \"status\": \"PENDING\",\n                \"statusLogs\": [\n                    {\n                        \"status\": \"PENDING\",\n                        \"note\": \"Parcel created and waiting for approval\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-08-01T09:28:25.422Z\",\n                        \"_id\": \"688c88b9121fb5f75b3bbaad\"\n                    }\n                ],\n                \"isDeleted\": false,\n                \"reviews\": [],\n                \"initiatedBy\": \"6888deb6ede2295932417726\",\n                \"deliveryAttempt\": 0,\n                \"createdAt\": \"2025-08-01T09:28:25.433Z\",\n                \"updatedAt\": \"2025-08-01T09:28:25.433Z\"\n            }\n        ],\n        \"meta\": {\n            \"total\": 4,\n            \"page\": 1,\n            \"limit\": 10,\n            \"totalPages\": 1\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get sender all parcel",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\r\n  \"receiver\": \"6888ddf300b939453748f629\",\r\n\r\n  \"paymentMethod\": \"COD\",\r\n  \"paymentStatus\": \"UNPAID\",\r\n  \"paymentAmount\": 250,\r\n  \"deliveryFee\": 40,\r\n\r\n  \"weight\": 1.2,\r\n  \"length\": 10,\r\n  \"width\": 10,\r\n  \"height\": 5,\r\n  \"description\": \"Books and documents\",\r\n\r\n  \"pickupDate\": \"2025-08-01\",\r\n  \"expectedDeliveryDate\": \"2025-08-03\",\r\n  \"deliveryType\": \"STANDARD\",\r\n\r\n  \"pickupCity\": \"Dhaka\",\r\n  \"pickupAddress\": \"Uttara, Sector 4\",\r\n  \"deliveryCity\": \"Chittagong\",\r\n  \"deliveryAddress\": \"GEC Circle\",\r\n  \"deliveryPhone\": \"01712345678\",\r\n\r\n  \"itemNames\": [\"Book\", \"Notebook\"],\r\n  \"itemQuantities\": [2, 3],\r\n  \"itemValues\": [100, 50]\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/parcels/sender?limit=1&page=2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"parcels",
+								"sender"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get sender all parcel",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\r\n  \"receiver\": \"6888ddf300b939453748f629\",\r\n\r\n  \"paymentMethod\": \"COD\",\r\n  \"paymentStatus\": \"UNPAID\",\r\n  \"paymentAmount\": 250,\r\n  \"deliveryFee\": 40,\r\n\r\n  \"weight\": 1.2,\r\n  \"length\": 10,\r\n  \"width\": 10,\r\n  \"height\": 5,\r\n  \"description\": \"Books and documents\",\r\n\r\n  \"pickupDate\": \"2025-08-01\",\r\n  \"expectedDeliveryDate\": \"2025-08-03\",\r\n  \"deliveryType\": \"STANDARD\",\r\n\r\n  \"pickupCity\": \"Dhaka\",\r\n  \"pickupAddress\": \"Uttara, Sector 4\",\r\n  \"deliveryCity\": \"Chittagong\",\r\n  \"deliveryAddress\": \"GEC Circle\",\r\n  \"deliveryPhone\": \"01712345678\",\r\n\r\n  \"itemNames\": [\"Book\", \"Notebook\"],\r\n  \"itemQuantities\": [2, 3],\r\n  \"itemValues\": [100, 50]\r\n\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/parcels/sender?limit=1&page=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"parcels",
+										"sender"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "5965"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"174d-LtTEpL51M4GNX/F4YJ8XHnz2bpY\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:38:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Parcels retrieved successfully.\",\n    \"data\": {\n        \"parcels\": [\n            {\n                \"paymentInfo\": {\n                    \"method\": \"COD\",\n                    \"status\": \"UNPAID\",\n                    \"amount\": 250,\n                    \"deleveryFee\": 63\n                },\n                \"packageDetails\": {\n                    \"dimensions\": {\n                        \"length\": 10,\n                        \"width\": 10,\n                        \"height\": 5\n                    },\n                    \"weight\": 1.2,\n                    \"description\": \"Books and documents\",\n                    \"items\": [\n                        {\n                            \"name\": \"Book\",\n                            \"quantity\": 2,\n                            \"value\": 100,\n                            \"_id\": \"688c88b9121fb5f75b3bbaab\"\n                        },\n                        {\n                            \"name\": \"Notebook\",\n                            \"quantity\": 3,\n                            \"value\": 50,\n                            \"_id\": \"688c88b9121fb5f75b3bbaac\"\n                        }\n                    ],\n                    \"images\": []\n                },\n                \"deliveryInfo\": {\n                    \"currentLocation\": {\n                        \"type\": \"Point\",\n                        \"coordinates\": [\n                            0,\n                            0\n                        ],\n                        \"address\": \"\"\n                    },\n                    \"pickupAddress\": {\n                        \"city\": \"Dhaka\",\n                        \"address\": \"Uttara, Sector 4\"\n                    },\n                    \"deliveryAddress\": {\n                        \"city\": \"Chittagong\",\n                        \"address\": \"GEC Circle\",\n                        \"phone\": \"01712345678\"\n                    },\n                    \"pickupDate\": \"2025-08-01T00:00:00.000Z\",\n                    \"expectedDeliveryDate\": \"2025-08-03T00:00:00.000Z\",\n                    \"deliveryType\": \"STANDARD\"\n                },\n                \"_id\": \"688c88b9121fb5f75b3bbaaa\",\n                \"trackingId\": \"TRK-20250801-952VR2\",\n                \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\n                \"receiver\": \"688c87c6026ca49a2db7c401\",\n                \"status\": \"PENDING\",\n                \"statusLogs\": [\n                    {\n                        \"status\": \"PENDING\",\n                        \"note\": \"Parcel created and waiting for approval\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-08-01T09:28:25.422Z\",\n                        \"_id\": \"688c88b9121fb5f75b3bbaad\"\n                    }\n                ],\n                \"isDeleted\": false,\n                \"reviews\": [],\n                \"initiatedBy\": \"6888deb6ede2295932417726\",\n                \"deliveryAttempt\": 0,\n                \"createdAt\": \"2025-08-01T09:28:25.433Z\",\n                \"updatedAt\": \"2025-08-01T09:28:25.433Z\"\n            },\n            {\n                \"paymentInfo\": {\n                    \"method\": \"COD\",\n                    \"status\": \"UNPAID\",\n                    \"amount\": 250,\n                    \"deleveryFee\": 63\n                },\n                \"packageDetails\": {\n                    \"dimensions\": {\n                        \"length\": 10,\n                        \"width\": 10,\n                        \"height\": 5\n                    },\n                    \"weight\": 1.2,\n                    \"description\": \"Books and documents\",\n                    \"items\": [\n                        {\n                            \"name\": \"Book\",\n                            \"quantity\": 2,\n                            \"value\": 100,\n                            \"_id\": \"688c61fa4c21a3f0586aa8c2\"\n                        },\n                        {\n                            \"name\": \"Notebook\",\n                            \"quantity\": 3,\n                            \"value\": 50,\n                            \"_id\": \"688c61fa4c21a3f0586aa8c3\"\n                        }\n                    ],\n                    \"images\": []\n                },\n                \"deliveryInfo\": {\n                    \"currentLocation\": {\n                        \"type\": \"Point\",\n                        \"coordinates\": [\n                            0,\n                            0\n                        ],\n                        \"address\": \"\"\n                    },\n                    \"pickupAddress\": {\n                        \"city\": \"Dhaka\",\n                        \"address\": \"Uttara, Sector 4\"\n                    },\n                    \"deliveryAddress\": {\n                        \"city\": \"Chittagong\",\n                        \"address\": \"GEC Circle\",\n                        \"phone\": \"01712345678\"\n                    },\n                    \"pickupDate\": \"2025-08-01T00:00:00.000Z\",\n                    \"expectedDeliveryDate\": \"2025-08-03T00:00:00.000Z\",\n                    \"deliveryType\": \"STANDARD\"\n                },\n                \"_id\": \"688c61fa4c21a3f0586aa8c1\",\n                \"trackingId\": \"TRK-20250801-HGA62J\",\n                \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\n                \"receiver\": \"6888ddf300b939453748f629\",\n                \"status\": \"PENDING\",\n                \"statusLogs\": [\n                    {\n                        \"status\": \"PENDING\",\n                        \"note\": \"Parcel created and waiting for approval\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-08-01T06:43:06.911Z\",\n                        \"_id\": \"688c61fa4c21a3f0586aa8c4\"\n                    }\n                ],\n                \"isDeleted\": false,\n                \"reviews\": [],\n                \"initiatedBy\": \"6888deb6ede2295932417726\",\n                \"deliveryAttempt\": 0,\n                \"createdAt\": \"2025-08-01T06:43:06.927Z\",\n                \"updatedAt\": \"2025-08-01T06:43:06.927Z\"\n            },\n            {\n                \"paymentInfo\": {\n                    \"method\": \"COD\",\n                    \"status\": \"UNPAID\",\n                    \"amount\": 250,\n                    \"deleveryFee\": 63\n                },\n                \"packageDetails\": {\n                    \"dimensions\": {\n                        \"length\": 10,\n                        \"width\": 10,\n                        \"height\": 5\n                    },\n                    \"weight\": 1.2,\n                    \"description\": \"Books and documents\",\n                    \"items\": [\n                        {\n                            \"name\": \"Book\",\n                            \"quantity\": 2,\n                            \"value\": 100,\n                            \"_id\": \"688b9903c51b43283fa17b7e\"\n                        },\n                        {\n                            \"name\": \"Notebook\",\n                            \"quantity\": 3,\n                            \"value\": 50,\n                            \"_id\": \"688b9903c51b43283fa17b7f\"\n                        }\n                    ],\n                    \"images\": []\n                },\n                \"deliveryInfo\": {\n                    \"currentLocation\": {\n                        \"type\": \"Point\",\n                        \"coordinates\": [\n                            0,\n                            0\n                        ],\n                        \"address\": \"\"\n                    },\n                    \"pickupAddress\": {\n                        \"city\": \"Dhaka\",\n                        \"address\": \"Uttara, Sector 4\"\n                    },\n                    \"deliveryAddress\": {\n                        \"city\": \"Chittagong\",\n                        \"address\": \"GEC Circle\",\n                        \"phone\": \"01712345678\"\n                    },\n                    \"pickupDate\": \"2025-08-01T00:00:00.000Z\",\n                    \"expectedDeliveryDate\": \"2025-08-03T00:00:00.000Z\",\n                    \"deliveryType\": \"STANDARD\"\n                },\n                \"_id\": \"688b9903c51b43283fa17b7d\",\n                \"trackingId\": \"TRK-20250731-2075JZ\",\n                \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\n                \"receiver\": \"6888ddf300b939453748f629\",\n                \"status\": \"RETURNED_INITIATED\",\n                \"statusLogs\": [\n                    {\n                        \"status\": \"PENDING\",\n                        \"note\": \"Parcel created and waiting for approval\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-07-31T16:25:39.278Z\",\n                        \"_id\": \"688b9903c51b43283fa17b80\"\n                    },\n                    {\n                        \"status\": \"APPROVED\",\n                        \"note\": \"a rider is assigned to pick up this parcel\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-08-01T06:54:12.541Z\",\n                        \"_id\": \"688c6494a5ad1ea0e9564e1a\"\n                    },\n                    {\n                        \"status\": \"DELIVERED\",\n                        \"note\": \"Parcel is safely and successfully delivered to receiver.\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-08-01T06:54:43.948Z\",\n                        \"_id\": \"688c64b3a5ad1ea0e9564e21\"\n                    },\n                    {\n                        \"status\": \"RETURNED_INITIATED\",\n                        \"note\": \"Wrong product \",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-08-01T06:58:10.150Z\",\n                        \"_id\": \"688c6582ef48d37e42e6a12c\"\n                    }\n                ],\n                \"isDeleted\": false,\n                \"reviews\": [],\n                \"initiatedBy\": \"6888deb6ede2295932417726\",\n                \"deliveryAttempt\": 0,\n                \"createdAt\": \"2025-07-31T16:25:39.291Z\",\n                \"updatedAt\": \"2025-08-01T06:58:10.156Z\"\n            },\n            {\n                \"paymentInfo\": {\n                    \"method\": \"COD\",\n                    \"status\": \"UNPAID\",\n                    \"amount\": 250,\n                    \"deleveryFee\": 63\n                },\n                \"packageDetails\": {\n                    \"dimensions\": {\n                        \"length\": 10,\n                        \"width\": 10,\n                        \"height\": 5\n                    },\n                    \"weight\": 1.2,\n                    \"description\": \"Books and documents\",\n                    \"items\": [\n                        {\n                            \"name\": \"Book\",\n                            \"quantity\": 2,\n                            \"value\": 100,\n                            \"_id\": \"688b620b8668b145ac97992a\"\n                        },\n                        {\n                            \"name\": \"Notebook\",\n                            \"quantity\": 3,\n                            \"value\": 50,\n                            \"_id\": \"688b620b8668b145ac97992b\"\n                        }\n                    ],\n                    \"images\": []\n                },\n                \"deliveryInfo\": {\n                    \"currentLocation\": {\n                        \"type\": \"Point\",\n                        \"coordinates\": [\n                            0,\n                            0\n                        ],\n                        \"address\": \"\"\n                    },\n                    \"pickupAddress\": {\n                        \"city\": \"Dhaka\",\n                        \"address\": \"Uttara, Sector 4\"\n                    },\n                    \"deliveryAddress\": {\n                        \"city\": \"Chittagong\",\n                        \"address\": \"GEC Circle\",\n                        \"phone\": \"01712345678\"\n                    },\n                    \"pickupDate\": \"2025-08-01T00:00:00.000Z\",\n                    \"expectedDeliveryDate\": \"2025-08-03T00:00:00.000Z\",\n                    \"deliveryType\": \"STANDARD\"\n                },\n                \"_id\": \"688b620b8668b145ac979929\",\n                \"trackingId\": \"TRK-20250731-ZIF2SF\",\n                \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\n                \"receiver\": \"6888ddf300b939453748f629\",\n                \"status\": \"CANCELED\",\n                \"statusLogs\": [\n                    {\n                        \"status\": \"PENDING\",\n                        \"note\": \"Parcel created and waiting for approval\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-07-31T12:31:07.677Z\",\n                        \"_id\": \"688b620b8668b145ac97992c\"\n                    },\n                    {\n                        \"status\": \"CANCELED\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-07-31T12:31:25.705Z\",\n                        \"_id\": \"688b621d8668b145ac979932\"\n                    },\n                    {\n                        \"status\": \"BLOCKED\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-07-31T12:44:43.807Z\",\n                        \"_id\": \"688b653bf8586c9cc5c4bd3a\"\n                    }\n                ],\n                \"isDeleted\": false,\n                \"reviews\": [],\n                \"initiatedBy\": \"6888deb6ede2295932417726\",\n                \"deliveryAttempt\": 0,\n                \"createdAt\": \"2025-07-31T12:31:07.690Z\",\n                \"updatedAt\": \"2025-07-31T12:44:43.814Z\"\n            }\n        ],\n        \"meta\": {\n            \"total\": 4,\n            \"page\": 1,\n            \"limit\": 10,\n            \"totalPages\": 1\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "my parcel",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\r\n  \"receiver\": \"6888ddf300b939453748f629\",\r\n\r\n  \"paymentMethod\": \"COD\",\r\n  \"paymentStatus\": \"UNPAID\",\r\n  \"paymentAmount\": 250,\r\n  \"deliveryFee\": 40,\r\n\r\n  \"weight\": 1.2,\r\n  \"length\": 10,\r\n  \"width\": 10,\r\n  \"height\": 5,\r\n  \"description\": \"Books and documents\",\r\n\r\n  \"pickupDate\": \"2025-08-01\",\r\n  \"expectedDeliveryDate\": \"2025-08-03\",\r\n  \"deliveryType\": \"STANDARD\",\r\n\r\n  \"pickupCity\": \"Dhaka\",\r\n  \"pickupAddress\": \"Uttara, Sector 4\",\r\n  \"deliveryCity\": \"Chittagong\",\r\n  \"deliveryAddress\": \"GEC Circle\",\r\n  \"deliveryPhone\": \"01712345678\",\r\n\r\n  \"itemNames\": [\"Book\", \"Notebook\"],\r\n  \"itemQuantities\": [2, 3],\r\n  \"itemValues\": [100, 50]\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/parcels/sender/me?limit=1&page=2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"parcels",
+								"sender",
+								"me"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get sender all parcel Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\r\n  \"receiver\": \"6888ddf300b939453748f629\",\r\n\r\n  \"paymentMethod\": \"COD\",\r\n  \"paymentStatus\": \"UNPAID\",\r\n  \"paymentAmount\": 250,\r\n  \"deliveryFee\": 40,\r\n\r\n  \"weight\": 1.2,\r\n  \"length\": 10,\r\n  \"width\": 10,\r\n  \"height\": 5,\r\n  \"description\": \"Books and documents\",\r\n\r\n  \"pickupDate\": \"2025-08-01\",\r\n  \"expectedDeliveryDate\": \"2025-08-03\",\r\n  \"deliveryType\": \"STANDARD\",\r\n\r\n  \"pickupCity\": \"Dhaka\",\r\n  \"pickupAddress\": \"Uttara, Sector 4\",\r\n  \"deliveryCity\": \"Chittagong\",\r\n  \"deliveryAddress\": \"GEC Circle\",\r\n  \"deliveryPhone\": \"01712345678\",\r\n\r\n  \"itemNames\": [\"Book\", \"Notebook\"],\r\n  \"itemQuantities\": [2, 3],\r\n  \"itemValues\": [100, 50]\r\n\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/parcels/me?limit=1&page=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"parcels",
+										"me"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "155"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9b-iH7X2l8Jwk39+DU/jffJthBSalQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:34:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"My parcels retrieved successfully.\",\n    \"data\": {\n        \"parcels\": [],\n        \"meta\": {\n            \"total\": 0,\n            \"page\": 2,\n            \"limit\": 1,\n            \"totalPages\": 0\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get receiver all parcel",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\r\n  \"receiver\": \"6888ddf300b939453748f629\",\r\n\r\n  \"paymentMethod\": \"COD\",\r\n  \"paymentStatus\": \"UNPAID\",\r\n  \"paymentAmount\": 250,\r\n  \"deliveryFee\": 40,\r\n\r\n  \"weight\": 1.2,\r\n  \"length\": 10,\r\n  \"width\": 10,\r\n  \"height\": 5,\r\n  \"description\": \"Books and documents\",\r\n\r\n  \"pickupDate\": \"2025-08-01\",\r\n  \"expectedDeliveryDate\": \"2025-08-03\",\r\n  \"deliveryType\": \"STANDARD\",\r\n\r\n  \"pickupCity\": \"Dhaka\",\r\n  \"pickupAddress\": \"Uttara, Sector 4\",\r\n  \"deliveryCity\": \"Chittagong\",\r\n  \"deliveryAddress\": \"GEC Circle\",\r\n  \"deliveryPhone\": \"01712345678\",\r\n\r\n  \"itemNames\": [\"Book\", \"Notebook\"],\r\n  \"itemQuantities\": [2, 3],\r\n  \"itemValues\": [100, 50]\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/parcels/receiver?limit=1&page=2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"parcels",
+								"receiver"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get receiver all parcel",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\r\n  \"receiver\": \"6888ddf300b939453748f629\",\r\n\r\n  \"paymentMethod\": \"COD\",\r\n  \"paymentStatus\": \"UNPAID\",\r\n  \"paymentAmount\": 250,\r\n  \"deliveryFee\": 40,\r\n\r\n  \"weight\": 1.2,\r\n  \"length\": 10,\r\n  \"width\": 10,\r\n  \"height\": 5,\r\n  \"description\": \"Books and documents\",\r\n\r\n  \"pickupDate\": \"2025-08-01\",\r\n  \"expectedDeliveryDate\": \"2025-08-03\",\r\n  \"deliveryType\": \"STANDARD\",\r\n\r\n  \"pickupCity\": \"Dhaka\",\r\n  \"pickupAddress\": \"Uttara, Sector 4\",\r\n  \"deliveryCity\": \"Chittagong\",\r\n  \"deliveryAddress\": \"GEC Circle\",\r\n  \"deliveryPhone\": \"01712345678\",\r\n\r\n  \"itemNames\": [\"Book\", \"Notebook\"],\r\n  \"itemQuantities\": [2, 3],\r\n  \"itemValues\": [100, 50]\r\n\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/parcels/receiver?limit=1&page=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"parcels",
+										"receiver"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "5965"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"174d-LtTEpL51M4GNX/F4YJ8XHnz2bpY\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:37:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Parcels retrieved successfully.\",\n    \"data\": {\n        \"parcels\": [\n            {\n                \"paymentInfo\": {\n                    \"method\": \"COD\",\n                    \"status\": \"UNPAID\",\n                    \"amount\": 250,\n                    \"deleveryFee\": 63\n                },\n                \"packageDetails\": {\n                    \"dimensions\": {\n                        \"length\": 10,\n                        \"width\": 10,\n                        \"height\": 5\n                    },\n                    \"weight\": 1.2,\n                    \"description\": \"Books and documents\",\n                    \"items\": [\n                        {\n                            \"name\": \"Book\",\n                            \"quantity\": 2,\n                            \"value\": 100,\n                            \"_id\": \"688c88b9121fb5f75b3bbaab\"\n                        },\n                        {\n                            \"name\": \"Notebook\",\n                            \"quantity\": 3,\n                            \"value\": 50,\n                            \"_id\": \"688c88b9121fb5f75b3bbaac\"\n                        }\n                    ],\n                    \"images\": []\n                },\n                \"deliveryInfo\": {\n                    \"currentLocation\": {\n                        \"type\": \"Point\",\n                        \"coordinates\": [\n                            0,\n                            0\n                        ],\n                        \"address\": \"\"\n                    },\n                    \"pickupAddress\": {\n                        \"city\": \"Dhaka\",\n                        \"address\": \"Uttara, Sector 4\"\n                    },\n                    \"deliveryAddress\": {\n                        \"city\": \"Chittagong\",\n                        \"address\": \"GEC Circle\",\n                        \"phone\": \"01712345678\"\n                    },\n                    \"pickupDate\": \"2025-08-01T00:00:00.000Z\",\n                    \"expectedDeliveryDate\": \"2025-08-03T00:00:00.000Z\",\n                    \"deliveryType\": \"STANDARD\"\n                },\n                \"_id\": \"688c88b9121fb5f75b3bbaaa\",\n                \"trackingId\": \"TRK-20250801-952VR2\",\n                \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\n                \"receiver\": \"688c87c6026ca49a2db7c401\",\n                \"status\": \"PENDING\",\n                \"statusLogs\": [\n                    {\n                        \"status\": \"PENDING\",\n                        \"note\": \"Parcel created and waiting for approval\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-08-01T09:28:25.422Z\",\n                        \"_id\": \"688c88b9121fb5f75b3bbaad\"\n                    }\n                ],\n                \"isDeleted\": false,\n                \"reviews\": [],\n                \"initiatedBy\": \"6888deb6ede2295932417726\",\n                \"deliveryAttempt\": 0,\n                \"createdAt\": \"2025-08-01T09:28:25.433Z\",\n                \"updatedAt\": \"2025-08-01T09:28:25.433Z\"\n            },\n            {\n                \"paymentInfo\": {\n                    \"method\": \"COD\",\n                    \"status\": \"UNPAID\",\n                    \"amount\": 250,\n                    \"deleveryFee\": 63\n                },\n                \"packageDetails\": {\n                    \"dimensions\": {\n                        \"length\": 10,\n                        \"width\": 10,\n                        \"height\": 5\n                    },\n                    \"weight\": 1.2,\n                    \"description\": \"Books and documents\",\n                    \"items\": [\n                        {\n                            \"name\": \"Book\",\n                            \"quantity\": 2,\n                            \"value\": 100,\n                            \"_id\": \"688c61fa4c21a3f0586aa8c2\"\n                        },\n                        {\n                            \"name\": \"Notebook\",\n                            \"quantity\": 3,\n                            \"value\": 50,\n                            \"_id\": \"688c61fa4c21a3f0586aa8c3\"\n                        }\n                    ],\n                    \"images\": []\n                },\n                \"deliveryInfo\": {\n                    \"currentLocation\": {\n                        \"type\": \"Point\",\n                        \"coordinates\": [\n                            0,\n                            0\n                        ],\n                        \"address\": \"\"\n                    },\n                    \"pickupAddress\": {\n                        \"city\": \"Dhaka\",\n                        \"address\": \"Uttara, Sector 4\"\n                    },\n                    \"deliveryAddress\": {\n                        \"city\": \"Chittagong\",\n                        \"address\": \"GEC Circle\",\n                        \"phone\": \"01712345678\"\n                    },\n                    \"pickupDate\": \"2025-08-01T00:00:00.000Z\",\n                    \"expectedDeliveryDate\": \"2025-08-03T00:00:00.000Z\",\n                    \"deliveryType\": \"STANDARD\"\n                },\n                \"_id\": \"688c61fa4c21a3f0586aa8c1\",\n                \"trackingId\": \"TRK-20250801-HGA62J\",\n                \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\n                \"receiver\": \"6888ddf300b939453748f629\",\n                \"status\": \"PENDING\",\n                \"statusLogs\": [\n                    {\n                        \"status\": \"PENDING\",\n                        \"note\": \"Parcel created and waiting for approval\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-08-01T06:43:06.911Z\",\n                        \"_id\": \"688c61fa4c21a3f0586aa8c4\"\n                    }\n                ],\n                \"isDeleted\": false,\n                \"reviews\": [],\n                \"initiatedBy\": \"6888deb6ede2295932417726\",\n                \"deliveryAttempt\": 0,\n                \"createdAt\": \"2025-08-01T06:43:06.927Z\",\n                \"updatedAt\": \"2025-08-01T06:43:06.927Z\"\n            },\n            {\n                \"paymentInfo\": {\n                    \"method\": \"COD\",\n                    \"status\": \"UNPAID\",\n                    \"amount\": 250,\n                    \"deleveryFee\": 63\n                },\n                \"packageDetails\": {\n                    \"dimensions\": {\n                        \"length\": 10,\n                        \"width\": 10,\n                        \"height\": 5\n                    },\n                    \"weight\": 1.2,\n                    \"description\": \"Books and documents\",\n                    \"items\": [\n                        {\n                            \"name\": \"Book\",\n                            \"quantity\": 2,\n                            \"value\": 100,\n                            \"_id\": \"688b9903c51b43283fa17b7e\"\n                        },\n                        {\n                            \"name\": \"Notebook\",\n                            \"quantity\": 3,\n                            \"value\": 50,\n                            \"_id\": \"688b9903c51b43283fa17b7f\"\n                        }\n                    ],\n                    \"images\": []\n                },\n                \"deliveryInfo\": {\n                    \"currentLocation\": {\n                        \"type\": \"Point\",\n                        \"coordinates\": [\n                            0,\n                            0\n                        ],\n                        \"address\": \"\"\n                    },\n                    \"pickupAddress\": {\n                        \"city\": \"Dhaka\",\n                        \"address\": \"Uttara, Sector 4\"\n                    },\n                    \"deliveryAddress\": {\n                        \"city\": \"Chittagong\",\n                        \"address\": \"GEC Circle\",\n                        \"phone\": \"01712345678\"\n                    },\n                    \"pickupDate\": \"2025-08-01T00:00:00.000Z\",\n                    \"expectedDeliveryDate\": \"2025-08-03T00:00:00.000Z\",\n                    \"deliveryType\": \"STANDARD\"\n                },\n                \"_id\": \"688b9903c51b43283fa17b7d\",\n                \"trackingId\": \"TRK-20250731-2075JZ\",\n                \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\n                \"receiver\": \"6888ddf300b939453748f629\",\n                \"status\": \"RETURNED_INITIATED\",\n                \"statusLogs\": [\n                    {\n                        \"status\": \"PENDING\",\n                        \"note\": \"Parcel created and waiting for approval\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-07-31T16:25:39.278Z\",\n                        \"_id\": \"688b9903c51b43283fa17b80\"\n                    },\n                    {\n                        \"status\": \"APPROVED\",\n                        \"note\": \"a rider is assigned to pick up this parcel\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-08-01T06:54:12.541Z\",\n                        \"_id\": \"688c6494a5ad1ea0e9564e1a\"\n                    },\n                    {\n                        \"status\": \"DELIVERED\",\n                        \"note\": \"Parcel is safely and successfully delivered to receiver.\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-08-01T06:54:43.948Z\",\n                        \"_id\": \"688c64b3a5ad1ea0e9564e21\"\n                    },\n                    {\n                        \"status\": \"RETURNED_INITIATED\",\n                        \"note\": \"Wrong product \",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-08-01T06:58:10.150Z\",\n                        \"_id\": \"688c6582ef48d37e42e6a12c\"\n                    }\n                ],\n                \"isDeleted\": false,\n                \"reviews\": [],\n                \"initiatedBy\": \"6888deb6ede2295932417726\",\n                \"deliveryAttempt\": 0,\n                \"createdAt\": \"2025-07-31T16:25:39.291Z\",\n                \"updatedAt\": \"2025-08-01T06:58:10.156Z\"\n            },\n            {\n                \"paymentInfo\": {\n                    \"method\": \"COD\",\n                    \"status\": \"UNPAID\",\n                    \"amount\": 250,\n                    \"deleveryFee\": 63\n                },\n                \"packageDetails\": {\n                    \"dimensions\": {\n                        \"length\": 10,\n                        \"width\": 10,\n                        \"height\": 5\n                    },\n                    \"weight\": 1.2,\n                    \"description\": \"Books and documents\",\n                    \"items\": [\n                        {\n                            \"name\": \"Book\",\n                            \"quantity\": 2,\n                            \"value\": 100,\n                            \"_id\": \"688b620b8668b145ac97992a\"\n                        },\n                        {\n                            \"name\": \"Notebook\",\n                            \"quantity\": 3,\n                            \"value\": 50,\n                            \"_id\": \"688b620b8668b145ac97992b\"\n                        }\n                    ],\n                    \"images\": []\n                },\n                \"deliveryInfo\": {\n                    \"currentLocation\": {\n                        \"type\": \"Point\",\n                        \"coordinates\": [\n                            0,\n                            0\n                        ],\n                        \"address\": \"\"\n                    },\n                    \"pickupAddress\": {\n                        \"city\": \"Dhaka\",\n                        \"address\": \"Uttara, Sector 4\"\n                    },\n                    \"deliveryAddress\": {\n                        \"city\": \"Chittagong\",\n                        \"address\": \"GEC Circle\",\n                        \"phone\": \"01712345678\"\n                    },\n                    \"pickupDate\": \"2025-08-01T00:00:00.000Z\",\n                    \"expectedDeliveryDate\": \"2025-08-03T00:00:00.000Z\",\n                    \"deliveryType\": \"STANDARD\"\n                },\n                \"_id\": \"688b620b8668b145ac979929\",\n                \"trackingId\": \"TRK-20250731-ZIF2SF\",\n                \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\n                \"receiver\": \"6888ddf300b939453748f629\",\n                \"status\": \"CANCELED\",\n                \"statusLogs\": [\n                    {\n                        \"status\": \"PENDING\",\n                        \"note\": \"Parcel created and waiting for approval\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-07-31T12:31:07.677Z\",\n                        \"_id\": \"688b620b8668b145ac97992c\"\n                    },\n                    {\n                        \"status\": \"CANCELED\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-07-31T12:31:25.705Z\",\n                        \"_id\": \"688b621d8668b145ac979932\"\n                    },\n                    {\n                        \"status\": \"BLOCKED\",\n                        \"updatedBy\": \"6888deb6ede2295932417726\",\n                        \"timestamp\": \"2025-07-31T12:44:43.807Z\",\n                        \"_id\": \"688b653bf8586c9cc5c4bd3a\"\n                    }\n                ],\n                \"isDeleted\": false,\n                \"reviews\": [],\n                \"initiatedBy\": \"6888deb6ede2295932417726\",\n                \"deliveryAttempt\": 0,\n                \"createdAt\": \"2025-07-31T12:31:07.690Z\",\n                \"updatedAt\": \"2025-07-31T12:44:43.814Z\"\n            }\n        ],\n        \"meta\": {\n            \"total\": 4,\n            \"page\": 1,\n            \"limit\": 10,\n            \"totalPages\": 1\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "track parcel",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\r\n  \"receiver\": \"6888ddf300b939453748f629\",\r\n\r\n  \"paymentMethod\": \"COD\",\r\n  \"paymentStatus\": \"UNPAID\",\r\n  \"paymentAmount\": 250,\r\n  \"deliveryFee\": 40,\r\n\r\n  \"weight\": 1.2,\r\n  \"length\": 10,\r\n  \"width\": 10,\r\n  \"height\": 5,\r\n  \"description\": \"Books and documents\",\r\n\r\n  \"pickupDate\": \"2025-08-01\",\r\n  \"expectedDeliveryDate\": \"2025-08-03\",\r\n  \"deliveryType\": \"STANDARD\",\r\n\r\n  \"pickupCity\": \"Dhaka\",\r\n  \"pickupAddress\": \"Uttara, Sector 4\",\r\n  \"deliveryCity\": \"Chittagong\",\r\n  \"deliveryAddress\": \"GEC Circle\",\r\n  \"deliveryPhone\": \"01712345678\",\r\n\r\n  \"itemNames\": [\"Book\", \"Notebook\"],\r\n  \"itemQuantities\": [2, 3],\r\n  \"itemValues\": [100, 50]\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/parcels/tracking/TRK-20250731-2075JZ",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"parcels",
+								"tracking",
+								"TRK-20250731-2075JZ"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "track parcel",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\r\n  \"receiver\": \"6888ddf300b939453748f629\",\r\n\r\n  \"paymentMethod\": \"COD\",\r\n  \"paymentStatus\": \"UNPAID\",\r\n  \"paymentAmount\": 250,\r\n  \"deliveryFee\": 40,\r\n\r\n  \"weight\": 1.2,\r\n  \"length\": 10,\r\n  \"width\": 10,\r\n  \"height\": 5,\r\n  \"description\": \"Books and documents\",\r\n\r\n  \"pickupDate\": \"2025-08-01\",\r\n  \"expectedDeliveryDate\": \"2025-08-03\",\r\n  \"deliveryType\": \"STANDARD\",\r\n\r\n  \"pickupCity\": \"Dhaka\",\r\n  \"pickupAddress\": \"Uttara, Sector 4\",\r\n  \"deliveryCity\": \"Chittagong\",\r\n  \"deliveryAddress\": \"GEC Circle\",\r\n  \"deliveryPhone\": \"01712345678\",\r\n\r\n  \"itemNames\": [\"Book\", \"Notebook\"],\r\n  \"itemQuantities\": [2, 3],\r\n  \"itemValues\": [100, 50]\r\n\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/parcels/tracking/TRK-20250731-2075JZ",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"parcels",
+										"tracking",
+										"TRK-20250731-2075JZ"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1307"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"51b-+kMRr8HJv7GFCyYU9TsLVQjvaeQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:34:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Parcel tracked successfully.\",\n    \"data\": {\n        \"statusLogs\": [\n            {\n                \"status\": \"PENDING\",\n                \"note\": \"Parcel created and waiting for approval\",\n                \"updatedBy\": {\n                    \"name\": \"Emdadul Hoque Emon 1074\",\n                    \"picture\": \"https://lh3.googleusercontent.com/a/ACg8ocIIcsA6Wh8SMi0l6ULD8paQkyUPLeo6olouf_jO_iESGm2PqSXv=s96-c\"\n                },\n                \"timestamp\": \"2025-07-31T16:25:39.278Z\",\n                \"_id\": \"688b9903c51b43283fa17b80\"\n            },\n            {\n                \"status\": \"APPROVED\",\n                \"note\": \"a rider is assigned to pick up this parcel\",\n                \"updatedBy\": {\n                    \"name\": \"Emdadul Hoque Emon 1074\",\n                    \"picture\": \"https://lh3.googleusercontent.com/a/ACg8ocIIcsA6Wh8SMi0l6ULD8paQkyUPLeo6olouf_jO_iESGm2PqSXv=s96-c\"\n                },\n                \"timestamp\": \"2025-08-01T06:54:12.541Z\",\n                \"_id\": \"688c6494a5ad1ea0e9564e1a\"\n            },\n            {\n                \"status\": \"DELIVERED\",\n                \"note\": \"Parcel is safely and successfully delivered to receiver.\",\n                \"updatedBy\": {\n                    \"name\": \"Emdadul Hoque Emon 1074\",\n                    \"picture\": \"https://lh3.googleusercontent.com/a/ACg8ocIIcsA6Wh8SMi0l6ULD8paQkyUPLeo6olouf_jO_iESGm2PqSXv=s96-c\"\n                },\n                \"timestamp\": \"2025-08-01T06:54:43.948Z\",\n                \"_id\": \"688c64b3a5ad1ea0e9564e21\"\n            },\n            {\n                \"status\": \"RETURNED_INITIATED\",\n                \"note\": \"Wrong product \",\n                \"updatedBy\": {\n                    \"name\": \"Emdadul Hoque Emon 1074\",\n                    \"picture\": \"https://lh3.googleusercontent.com/a/ACg8ocIIcsA6Wh8SMi0l6ULD8paQkyUPLeo6olouf_jO_iESGm2PqSXv=s96-c\"\n                },\n                \"timestamp\": \"2025-08-01T06:58:10.150Z\",\n                \"_id\": \"688c6582ef48d37e42e6a12c\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update status",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "status",
+									"value": "DELIVERED",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "Parcel is safely and successfully delivered to receiver.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/parcels/update-status/688b9903c51b43283fa17b7d",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"parcels",
+								"update-status",
+								"688b9903c51b43283fa17b7d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update status",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "DELIVERED",
+											"type": "text"
+										},
+										{
+											"key": "note",
+											"value": "Parcel is safely and successfully delivered to receiver.",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/parcels/update-status/688b9903c51b43283fa17b7d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"parcels",
+										"update-status",
+										"688b9903c51b43283fa17b7d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2088"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"828-HrOVcBibtEXaSawSkgkJwO9cgw4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:38:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Parcel status updated successfully.\",\n    \"data\": {\n        \"paymentInfo\": {\n            \"method\": \"COD\",\n            \"status\": \"UNPAID\",\n            \"amount\": 250,\n            \"deleveryFee\": 63\n        },\n        \"packageDetails\": {\n            \"dimensions\": {\n                \"length\": 10,\n                \"width\": 10,\n                \"height\": 5\n            },\n            \"weight\": 1.2,\n            \"description\": \"Books and documents\",\n            \"items\": [\n                {\n                    \"name\": \"Book\",\n                    \"quantity\": 2,\n                    \"value\": 100,\n                    \"_id\": \"688b9903c51b43283fa17b7e\"\n                },\n                {\n                    \"name\": \"Notebook\",\n                    \"quantity\": 3,\n                    \"value\": 50,\n                    \"_id\": \"688b9903c51b43283fa17b7f\"\n                }\n            ],\n            \"images\": []\n        },\n        \"deliveryInfo\": {\n            \"currentLocation\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    0,\n                    0\n                ],\n                \"address\": \"\"\n            },\n            \"pickupAddress\": {\n                \"city\": \"Dhaka\",\n                \"address\": \"Uttara, Sector 4\"\n            },\n            \"deliveryAddress\": {\n                \"city\": \"Chittagong\",\n                \"address\": \"GEC Circle\",\n                \"phone\": \"01712345678\"\n            },\n            \"pickupDate\": \"2025-08-01T00:00:00.000Z\",\n            \"expectedDeliveryDate\": \"2025-08-03T00:00:00.000Z\",\n            \"deliveryType\": \"STANDARD\"\n        },\n        \"_id\": \"688b9903c51b43283fa17b7d\",\n        \"trackingId\": \"TRK-20250731-2075JZ\",\n        \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\n        \"receiver\": \"6888ddf300b939453748f629\",\n        \"status\": \"DELIVERED\",\n        \"statusLogs\": [\n            {\n                \"status\": \"PENDING\",\n                \"note\": \"Parcel created and waiting for approval\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-07-31T16:25:39.278Z\",\n                \"_id\": \"688b9903c51b43283fa17b80\"\n            },\n            {\n                \"status\": \"APPROVED\",\n                \"note\": \"a rider is assigned to pick up this parcel\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-08-01T06:54:12.541Z\",\n                \"_id\": \"688c6494a5ad1ea0e9564e1a\"\n            },\n            {\n                \"status\": \"DELIVERED\",\n                \"note\": \"Parcel is safely and successfully delivered to receiver.\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-08-01T06:54:43.948Z\",\n                \"_id\": \"688c64b3a5ad1ea0e9564e21\"\n            },\n            {\n                \"status\": \"RETURNED_INITIATED\",\n                \"note\": \"Wrong product \",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-08-01T06:58:10.150Z\",\n                \"_id\": \"688c6582ef48d37e42e6a12c\"\n            },\n            {\n                \"status\": \"DELIVERED\",\n                \"note\": \"Parcel is safely and successfully delivered to receiver.\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-08-01T09:38:24.088Z\",\n                \"_id\": \"688c8b10dbeaaee8664e9450\"\n            }\n        ],\n        \"isDeleted\": false,\n        \"reviews\": [],\n        \"initiatedBy\": \"6888deb6ede2295932417726\",\n        \"deliveryAttempt\": 0,\n        \"createdAt\": \"2025-07-31T16:25:39.291Z\",\n        \"updatedAt\": \"2025-08-01T09:38:24.095Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "cancel parcel",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\r\n  \"receiver\": \"6888ddf300b939453748f629\",\r\n\r\n  \"paymentMethod\": \"COD\",\r\n  \"paymentStatus\": \"UNPAID\",\r\n  \"paymentAmount\": 250,\r\n  \"deliveryFee\": 40,\r\n\r\n  \"weight\": 1.2,\r\n  \"length\": 10,\r\n  \"width\": 10,\r\n  \"height\": 5,\r\n  \"description\": \"Books and documents\",\r\n\r\n  \"pickupDate\": \"2025-08-01\",\r\n  \"expectedDeliveryDate\": \"2025-08-03\",\r\n  \"deliveryType\": \"STANDARD\",\r\n\r\n  \"pickupCity\": \"Dhaka\",\r\n  \"pickupAddress\": \"Uttara, Sector 4\",\r\n  \"deliveryCity\": \"Chittagong\",\r\n  \"deliveryAddress\": \"GEC Circle\",\r\n  \"deliveryPhone\": \"01712345678\",\r\n\r\n  \"itemNames\": [\"Book\", \"Notebook\"],\r\n  \"itemQuantities\": [2, 3],\r\n  \"itemValues\": [100, 50]\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/parcels/cancel/688b620b8668b145ac979929",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"parcels",
+								"cancel",
+								"688b620b8668b145ac979929"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cancel parcel",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\r\n  \"receiver\": \"6888ddf300b939453748f629\",\r\n\r\n  \"paymentMethod\": \"COD\",\r\n  \"paymentStatus\": \"UNPAID\",\r\n  \"paymentAmount\": 250,\r\n  \"deliveryFee\": 40,\r\n\r\n  \"weight\": 1.2,\r\n  \"length\": 10,\r\n  \"width\": 10,\r\n  \"height\": 5,\r\n  \"description\": \"Books and documents\",\r\n\r\n  \"pickupDate\": \"2025-08-01\",\r\n  \"expectedDeliveryDate\": \"2025-08-03\",\r\n  \"deliveryType\": \"STANDARD\",\r\n\r\n  \"pickupCity\": \"Dhaka\",\r\n  \"pickupAddress\": \"Uttara, Sector 4\",\r\n  \"deliveryCity\": \"Chittagong\",\r\n  \"deliveryAddress\": \"GEC Circle\",\r\n  \"deliveryPhone\": \"01712345678\",\r\n\r\n  \"itemNames\": [\"Book\", \"Notebook\"],\r\n  \"itemQuantities\": [2, 3],\r\n  \"itemValues\": [100, 50]\r\n\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/parcels/cancel/688c88b9121fb5f75b3bbaaa",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"parcels",
+										"cancel",
+										"688c88b9121fb5f75b3bbaaa"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1462"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5b6-G+N2lDhVPMYaXkY+inUuZ4DOymc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:39:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Parcel canceled successfully.\",\n    \"data\": {\n        \"paymentInfo\": {\n            \"method\": \"COD\",\n            \"status\": \"UNPAID\",\n            \"amount\": 250,\n            \"deleveryFee\": 63\n        },\n        \"packageDetails\": {\n            \"dimensions\": {\n                \"length\": 10,\n                \"width\": 10,\n                \"height\": 5\n            },\n            \"weight\": 1.2,\n            \"description\": \"Books and documents\",\n            \"items\": [\n                {\n                    \"name\": \"Book\",\n                    \"quantity\": 2,\n                    \"value\": 100,\n                    \"_id\": \"688c88b9121fb5f75b3bbaab\"\n                },\n                {\n                    \"name\": \"Notebook\",\n                    \"quantity\": 3,\n                    \"value\": 50,\n                    \"_id\": \"688c88b9121fb5f75b3bbaac\"\n                }\n            ],\n            \"images\": []\n        },\n        \"deliveryInfo\": {\n            \"currentLocation\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    0,\n                    0\n                ],\n                \"address\": \"\"\n            },\n            \"pickupAddress\": {\n                \"city\": \"Dhaka\",\n                \"address\": \"Uttara, Sector 4\"\n            },\n            \"deliveryAddress\": {\n                \"city\": \"Chittagong\",\n                \"address\": \"GEC Circle\",\n                \"phone\": \"01712345678\"\n            },\n            \"pickupDate\": \"2025-08-01T00:00:00.000Z\",\n            \"expectedDeliveryDate\": \"2025-08-03T00:00:00.000Z\",\n            \"deliveryType\": \"STANDARD\"\n        },\n        \"_id\": \"688c88b9121fb5f75b3bbaaa\",\n        \"trackingId\": \"TRK-20250801-952VR2\",\n        \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\n        \"receiver\": \"688c87c6026ca49a2db7c401\",\n        \"status\": \"CANCELED\",\n        \"statusLogs\": [\n            {\n                \"status\": \"PENDING\",\n                \"note\": \"Parcel created and waiting for approval\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-08-01T09:28:25.422Z\",\n                \"_id\": \"688c88b9121fb5f75b3bbaad\"\n            },\n            {\n                \"status\": \"CANCELED\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-08-01T09:39:00.678Z\",\n                \"_id\": \"688c8b34dbeaaee8664e945c\"\n            }\n        ],\n        \"isDeleted\": false,\n        \"reviews\": [],\n        \"initiatedBy\": \"6888deb6ede2295932417726\",\n        \"deliveryAttempt\": 0,\n        \"createdAt\": \"2025-08-01T09:28:25.433Z\",\n        \"updatedAt\": \"2025-08-01T09:39:00.680Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "confirm parcel",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\r\n  \"receiver\": \"6888ddf300b939453748f629\",\r\n\r\n  \"paymentMethod\": \"COD\",\r\n  \"paymentStatus\": \"UNPAID\",\r\n  \"paymentAmount\": 250,\r\n  \"deliveryFee\": 40,\r\n\r\n  \"weight\": 1.2,\r\n  \"length\": 10,\r\n  \"width\": 10,\r\n  \"height\": 5,\r\n  \"description\": \"Books and documents\",\r\n\r\n  \"pickupDate\": \"2025-08-01\",\r\n  \"expectedDeliveryDate\": \"2025-08-03\",\r\n  \"deliveryType\": \"STANDARD\",\r\n\r\n  \"pickupCity\": \"Dhaka\",\r\n  \"pickupAddress\": \"Uttara, Sector 4\",\r\n  \"deliveryCity\": \"Chittagong\",\r\n  \"deliveryAddress\": \"GEC Circle\",\r\n  \"deliveryPhone\": \"01712345678\",\r\n\r\n  \"itemNames\": [\"Book\", \"Notebook\"],\r\n  \"itemQuantities\": [2, 3],\r\n  \"itemValues\": [100, 50]\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/parcels/confirm/688b9903c51b43283fa17b7d",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"parcels",
+								"confirm",
+								"688b9903c51b43283fa17b7d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "confirm parcel",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\r\n  \"receiver\": \"6888ddf300b939453748f629\",\r\n\r\n  \"paymentMethod\": \"COD\",\r\n  \"paymentStatus\": \"UNPAID\",\r\n  \"paymentAmount\": 250,\r\n  \"deliveryFee\": 40,\r\n\r\n  \"weight\": 1.2,\r\n  \"length\": 10,\r\n  \"width\": 10,\r\n  \"height\": 5,\r\n  \"description\": \"Books and documents\",\r\n\r\n  \"pickupDate\": \"2025-08-01\",\r\n  \"expectedDeliveryDate\": \"2025-08-03\",\r\n  \"deliveryType\": \"STANDARD\",\r\n\r\n  \"pickupCity\": \"Dhaka\",\r\n  \"pickupAddress\": \"Uttara, Sector 4\",\r\n  \"deliveryCity\": \"Chittagong\",\r\n  \"deliveryAddress\": \"GEC Circle\",\r\n  \"deliveryPhone\": \"01712345678\",\r\n\r\n  \"itemNames\": [\"Book\", \"Notebook\"],\r\n  \"itemQuantities\": [2, 3],\r\n  \"itemValues\": [100, 50]\r\n\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/parcels/confirm/688b9903c51b43283fa17b7d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"parcels",
+										"confirm",
+										"688b9903c51b43283fa17b7d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2215"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8a7-xXevqxmF4ktln1S/BKFqi3+ahh4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:39:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Parcel confirmed successfully.\",\n    \"data\": {\n        \"paymentInfo\": {\n            \"method\": \"COD\",\n            \"status\": \"UNPAID\",\n            \"amount\": 250,\n            \"deleveryFee\": 63\n        },\n        \"packageDetails\": {\n            \"dimensions\": {\n                \"length\": 10,\n                \"width\": 10,\n                \"height\": 5\n            },\n            \"weight\": 1.2,\n            \"description\": \"Books and documents\",\n            \"items\": [\n                {\n                    \"name\": \"Book\",\n                    \"quantity\": 2,\n                    \"value\": 100,\n                    \"_id\": \"688b9903c51b43283fa17b7e\"\n                },\n                {\n                    \"name\": \"Notebook\",\n                    \"quantity\": 3,\n                    \"value\": 50,\n                    \"_id\": \"688b9903c51b43283fa17b7f\"\n                }\n            ],\n            \"images\": []\n        },\n        \"deliveryInfo\": {\n            \"currentLocation\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    0,\n                    0\n                ],\n                \"address\": \"\"\n            },\n            \"pickupAddress\": {\n                \"city\": \"Dhaka\",\n                \"address\": \"Uttara, Sector 4\"\n            },\n            \"deliveryAddress\": {\n                \"city\": \"Chittagong\",\n                \"address\": \"GEC Circle\",\n                \"phone\": \"01712345678\"\n            },\n            \"pickupDate\": \"2025-08-01T00:00:00.000Z\",\n            \"expectedDeliveryDate\": \"2025-08-03T00:00:00.000Z\",\n            \"deliveryType\": \"STANDARD\"\n        },\n        \"_id\": \"688b9903c51b43283fa17b7d\",\n        \"trackingId\": \"TRK-20250731-2075JZ\",\n        \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\n        \"receiver\": \"6888ddf300b939453748f629\",\n        \"status\": \"APPROVED\",\n        \"statusLogs\": [\n            {\n                \"status\": \"PENDING\",\n                \"note\": \"Parcel created and waiting for approval\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-07-31T16:25:39.278Z\",\n                \"_id\": \"688b9903c51b43283fa17b80\"\n            },\n            {\n                \"status\": \"APPROVED\",\n                \"note\": \"a rider is assigned to pick up this parcel\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-08-01T06:54:12.541Z\",\n                \"_id\": \"688c6494a5ad1ea0e9564e1a\"\n            },\n            {\n                \"status\": \"DELIVERED\",\n                \"note\": \"Parcel is safely and successfully delivered to receiver.\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-08-01T06:54:43.948Z\",\n                \"_id\": \"688c64b3a5ad1ea0e9564e21\"\n            },\n            {\n                \"status\": \"RETURNED_INITIATED\",\n                \"note\": \"Wrong product \",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-08-01T06:58:10.150Z\",\n                \"_id\": \"688c6582ef48d37e42e6a12c\"\n            },\n            {\n                \"status\": \"DELIVERED\",\n                \"note\": \"Parcel is safely and successfully delivered to receiver.\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-08-01T09:38:24.088Z\",\n                \"_id\": \"688c8b10dbeaaee8664e9450\"\n            },\n            {\n                \"status\": \"APPROVED\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-08-01T09:39:34.936Z\",\n                \"_id\": \"688c8b56dbeaaee8664e946c\"\n            }\n        ],\n        \"isDeleted\": false,\n        \"reviews\": [],\n        \"initiatedBy\": \"6888deb6ede2295932417726\",\n        \"deliveryAttempt\": 0,\n        \"createdAt\": \"2025-07-31T16:25:39.291Z\",\n        \"updatedAt\": \"2025-08-01T09:39:34.938Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "return parcel",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "note",
+									"value": "Wrong product ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/parcels/return/688b9903c51b43283fa17b7d",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"parcels",
+								"return",
+								"688b9903c51b43283fa17b7d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "return parcel",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "note",
+											"value": "Wrong product ",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/parcels/return/688b9903c51b43283fa17b7d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"parcels",
+										"return",
+										"688b9903c51b43283fa17b7d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2591"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a1f-RyY0bynxupUre8YfZUssT14zeks\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:40:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Parcel returned successfully.\",\n    \"data\": {\n        \"paymentInfo\": {\n            \"method\": \"COD\",\n            \"status\": \"UNPAID\",\n            \"amount\": 250,\n            \"deleveryFee\": 63\n        },\n        \"packageDetails\": {\n            \"dimensions\": {\n                \"length\": 10,\n                \"width\": 10,\n                \"height\": 5\n            },\n            \"weight\": 1.2,\n            \"description\": \"Books and documents\",\n            \"items\": [\n                {\n                    \"name\": \"Book\",\n                    \"quantity\": 2,\n                    \"value\": 100,\n                    \"_id\": \"688b9903c51b43283fa17b7e\"\n                },\n                {\n                    \"name\": \"Notebook\",\n                    \"quantity\": 3,\n                    \"value\": 50,\n                    \"_id\": \"688b9903c51b43283fa17b7f\"\n                }\n            ],\n            \"images\": []\n        },\n        \"deliveryInfo\": {\n            \"currentLocation\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    0,\n                    0\n                ],\n                \"address\": \"\"\n            },\n            \"pickupAddress\": {\n                \"city\": \"Dhaka\",\n                \"address\": \"Uttara, Sector 4\"\n            },\n            \"deliveryAddress\": {\n                \"city\": \"Chittagong\",\n                \"address\": \"GEC Circle\",\n                \"phone\": \"01712345678\"\n            },\n            \"pickupDate\": \"2025-08-01T00:00:00.000Z\",\n            \"expectedDeliveryDate\": \"2025-08-03T00:00:00.000Z\",\n            \"deliveryType\": \"STANDARD\"\n        },\n        \"_id\": \"688b9903c51b43283fa17b7d\",\n        \"trackingId\": \"TRK-20250731-2075JZ\",\n        \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\n        \"receiver\": \"6888ddf300b939453748f629\",\n        \"status\": \"RETURNED_INITIATED\",\n        \"statusLogs\": [\n            {\n                \"status\": \"PENDING\",\n                \"note\": \"Parcel created and waiting for approval\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-07-31T16:25:39.278Z\",\n                \"_id\": \"688b9903c51b43283fa17b80\"\n            },\n            {\n                \"status\": \"APPROVED\",\n                \"note\": \"a rider is assigned to pick up this parcel\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-08-01T06:54:12.541Z\",\n                \"_id\": \"688c6494a5ad1ea0e9564e1a\"\n            },\n            {\n                \"status\": \"DELIVERED\",\n                \"note\": \"Parcel is safely and successfully delivered to receiver.\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-08-01T06:54:43.948Z\",\n                \"_id\": \"688c64b3a5ad1ea0e9564e21\"\n            },\n            {\n                \"status\": \"RETURNED_INITIATED\",\n                \"note\": \"Wrong product \",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-08-01T06:58:10.150Z\",\n                \"_id\": \"688c6582ef48d37e42e6a12c\"\n            },\n            {\n                \"status\": \"DELIVERED\",\n                \"note\": \"Parcel is safely and successfully delivered to receiver.\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-08-01T09:38:24.088Z\",\n                \"_id\": \"688c8b10dbeaaee8664e9450\"\n            },\n            {\n                \"status\": \"APPROVED\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-08-01T09:39:34.936Z\",\n                \"_id\": \"688c8b56dbeaaee8664e946c\"\n            },\n            {\n                \"status\": \"DELIVERED\",\n                \"note\": \"Parcel is safely and successfully delivered to receiver.\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-08-01T09:40:02.706Z\",\n                \"_id\": \"688c8b72dbeaaee8664e9480\"\n            },\n            {\n                \"status\": \"RETURNED_INITIATED\",\n                \"note\": \"Wrong product \",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-08-01T09:40:11.806Z\",\n                \"_id\": \"688c8b7bdbeaaee8664e948c\"\n            }\n        ],\n        \"isDeleted\": false,\n        \"reviews\": [],\n        \"initiatedBy\": \"6888deb6ede2295932417726\",\n        \"deliveryAttempt\": 0,\n        \"createdAt\": \"2025-07-31T16:25:39.291Z\",\n        \"updatedAt\": \"2025-08-01T09:40:11.809Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "block parcel [admin]",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\r\n  \"receiver\": \"6888ddf300b939453748f629\",\r\n\r\n  \"paymentMethod\": \"COD\",\r\n  \"paymentStatus\": \"UNPAID\",\r\n  \"paymentAmount\": 250,\r\n  \"deliveryFee\": 40,\r\n\r\n  \"weight\": 1.2,\r\n  \"length\": 10,\r\n  \"width\": 10,\r\n  \"height\": 5,\r\n  \"description\": \"Books and documents\",\r\n\r\n  \"pickupDate\": \"2025-08-01\",\r\n  \"expectedDeliveryDate\": \"2025-08-03\",\r\n  \"deliveryType\": \"STANDARD\",\r\n\r\n  \"pickupCity\": \"Dhaka\",\r\n  \"pickupAddress\": \"Uttara, Sector 4\",\r\n  \"deliveryCity\": \"Chittagong\",\r\n  \"deliveryAddress\": \"GEC Circle\",\r\n  \"deliveryPhone\": \"01712345678\",\r\n\r\n  \"itemNames\": [\"Book\", \"Notebook\"],\r\n  \"itemQuantities\": [2, 3],\r\n  \"itemValues\": [100, 50]\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/parcels/block/688b620b8668b145ac979929",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"parcels",
+								"block",
+								"688b620b8668b145ac979929"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "block parcel [admin]",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\r\n  \"receiver\": \"6888ddf300b939453748f629\",\r\n\r\n  \"paymentMethod\": \"COD\",\r\n  \"paymentStatus\": \"UNPAID\",\r\n  \"paymentAmount\": 250,\r\n  \"deliveryFee\": 40,\r\n\r\n  \"weight\": 1.2,\r\n  \"length\": 10,\r\n  \"width\": 10,\r\n  \"height\": 5,\r\n  \"description\": \"Books and documents\",\r\n\r\n  \"pickupDate\": \"2025-08-01\",\r\n  \"expectedDeliveryDate\": \"2025-08-03\",\r\n  \"deliveryType\": \"STANDARD\",\r\n\r\n  \"pickupCity\": \"Dhaka\",\r\n  \"pickupAddress\": \"Uttara, Sector 4\",\r\n  \"deliveryCity\": \"Chittagong\",\r\n  \"deliveryAddress\": \"GEC Circle\",\r\n  \"deliveryPhone\": \"01712345678\",\r\n\r\n  \"itemNames\": [\"Book\", \"Notebook\"],\r\n  \"itemQuantities\": [2, 3],\r\n  \"itemValues\": [100, 50]\r\n\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/parcels/block/688b620b8668b145ac979929",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"parcels",
+										"block",
+										"688b620b8668b145ac979929"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1725"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6bd-g3vn6T6zEYfZspPiOLzzGhf9xTQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:40:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Parcel blocked successfully.\",\n    \"data\": {\n        \"paymentInfo\": {\n            \"method\": \"COD\",\n            \"status\": \"UNPAID\",\n            \"amount\": 250,\n            \"deleveryFee\": 63\n        },\n        \"packageDetails\": {\n            \"dimensions\": {\n                \"length\": 10,\n                \"width\": 10,\n                \"height\": 5\n            },\n            \"weight\": 1.2,\n            \"description\": \"Books and documents\",\n            \"items\": [\n                {\n                    \"name\": \"Book\",\n                    \"quantity\": 2,\n                    \"value\": 100,\n                    \"_id\": \"688b620b8668b145ac97992a\"\n                },\n                {\n                    \"name\": \"Notebook\",\n                    \"quantity\": 3,\n                    \"value\": 50,\n                    \"_id\": \"688b620b8668b145ac97992b\"\n                }\n            ],\n            \"images\": []\n        },\n        \"deliveryInfo\": {\n            \"currentLocation\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    0,\n                    0\n                ],\n                \"address\": \"\"\n            },\n            \"pickupAddress\": {\n                \"city\": \"Dhaka\",\n                \"address\": \"Uttara, Sector 4\"\n            },\n            \"deliveryAddress\": {\n                \"city\": \"Chittagong\",\n                \"address\": \"GEC Circle\",\n                \"phone\": \"01712345678\"\n            },\n            \"pickupDate\": \"2025-08-01T00:00:00.000Z\",\n            \"expectedDeliveryDate\": \"2025-08-03T00:00:00.000Z\",\n            \"deliveryType\": \"STANDARD\"\n        },\n        \"_id\": \"688b620b8668b145ac979929\",\n        \"trackingId\": \"TRK-20250731-ZIF2SF\",\n        \"sender\": \"6888c4b9b66b9f0e0a97f7c9\",\n        \"receiver\": \"6888ddf300b939453748f629\",\n        \"status\": \"CANCELED\",\n        \"statusLogs\": [\n            {\n                \"status\": \"PENDING\",\n                \"note\": \"Parcel created and waiting for approval\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-07-31T12:31:07.677Z\",\n                \"_id\": \"688b620b8668b145ac97992c\"\n            },\n            {\n                \"status\": \"CANCELED\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-07-31T12:31:25.705Z\",\n                \"_id\": \"688b621d8668b145ac979932\"\n            },\n            {\n                \"status\": \"BLOCKED\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-07-31T12:44:43.807Z\",\n                \"_id\": \"688b653bf8586c9cc5c4bd3a\"\n            },\n            {\n                \"status\": \"BLOCKED\",\n                \"updatedBy\": \"6888deb6ede2295932417726\",\n                \"timestamp\": \"2025-08-01T09:40:34.351Z\",\n                \"_id\": \"688c8b92dbeaaee8664e9494\"\n            }\n        ],\n        \"isDeleted\": false,\n        \"reviews\": [],\n        \"initiatedBy\": \"6888deb6ede2295932417726\",\n        \"deliveryAttempt\": 0,\n        \"createdAt\": \"2025-07-31T12:31:07.690Z\",\n        \"updatedAt\": \"2025-08-01T09:40:34.354Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "stats",
+			"item": [
+				{
+					"name": "get user stats",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"test\",\r\n    \"email\":\"test@test.com\",\r\n    \"password\": \"Test123@#\",\r\n    \"phone\":\"+8801787286529\"\r\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/stats/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"stats",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get user stats",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"test\",\r\n    \"email\":\"test@test.com\",\r\n    \"password\": \"Test123@#\",\r\n    \"phone\":\"+8801787286529\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/v1/stats/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"stats",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "250"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fa-HXZbkfTyVAlqnn3wYSVMcZsc68o\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:40:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Users stats retrieved successfully.\",\n    \"data\": {\n        \"activeUsers\": 0,\n        \"last7daysUsers\": 4,\n        \"last30daysUsers\": 4,\n        \"usersByRole\": {\n            \"SENDER\": 1,\n            \"ADMIN\": 1,\n            \"RECEIVER\": 2\n        },\n        \"blockedUsers\": 0,\n        \"verifiedUsers\": 3,\n        \"unverifiedUsers\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get parcel stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/stats/parcels",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"stats",
+								"parcels"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get parcel stats",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/api/v1/stats/parcels",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"v1",
+										"stats",
+										"parcels"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "637"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27d-QDRSkp77AXY3DvZ7t2j2JXUEwRI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 09:41:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Parcels stats retrieved successfully.\",\n    \"data\": {\n        \"allParcel\": 4,\n        \"parcelByStatus\": {\n            \"CANCELED\": 2,\n            \"PENDING\": 1,\n            \"RETURNED_INITIATED\": 1\n        },\n        \"parcelByPaymentMethod\": {\n            \"COD\": 4\n        },\n        \"parcelByPaymentStatus\": {\n            \"UNPAID\": 4\n        },\n        \"blockedParcels\": 0,\n        \"deletedParcels\": 0,\n        \"mostSender\": {\n            \"count\": 4,\n            \"_id\": \"6888c4b9b66b9f0e0a97f7c9\",\n            \"name\": \"Test account 2\",\n            \"email\": \"test@test.com\",\n            \"phone\": \"+8801787286529\"\n        },\n        \"mostReceiver\": {\n            \"count\": 3,\n            \"_id\": \"6888ddf300b939453748f629\",\n            \"name\": \"Bayjid Afride\",\n            \"email\": \"emon0178728@gmail.com\",\n            \"picture\": \"https://lh3.googleusercontent.com/a/ACg8ocIbwBZgHQZ6Mr-Qx53H3LvJBMwdENnIMNQE06-OV9txHnq52w=s96-c\"\n        }\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "Only admin can get this route"
+		}
+	]
+}
