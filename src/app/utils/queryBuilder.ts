@@ -39,8 +39,9 @@ export class QueryBuilder<T extends Document> {
       "sortOrder",
       "limit",
       "page",
-      "sender",
-      "receiver",
+      // "sender",
+      // "receiver",
+      "populate",
     ];
     const filters = { ...this.queryParams };
 
@@ -48,10 +49,24 @@ export class QueryBuilder<T extends Document> {
     excludedFields.forEach((field) => delete filters[field]);
 
     for (const key in filters) {
-      const value = filters[key];
+      let value = filters[key];
+
       if (value === "true" || value === "false") {
         filters[key] = value === "true";
       }
+      // if the value is "null", null, "undefined", undefined, or empty string → remove this field
+      if (
+        value === null ||
+        value === undefined ||
+        value === "null" ||
+        value === "undefined" ||
+        value === ""
+      ) {
+        delete filters[key];
+        continue;
+      }
+
+      filters[key] = value;
     }
 
     this.filters = { ...this.filters, ...filters };
@@ -61,9 +76,14 @@ export class QueryBuilder<T extends Document> {
 
   search(fields: string[]): this {
     const keyword = this.queryParams.search;
+    const searchFields: string[] = this.queryParams.searchFields
+      ? this.queryParams.searchFields.split(",")
+      : fields
+      ? fields
+      : [];
     if (keyword) {
       const regex = new RegExp(keyword, "i");
-      const searchConditions = fields.map((field) => ({
+      const searchConditions = searchFields.map((field) => ({
         [field]: { $regex: regex },
       }));
       this.filters = { ...this.filters, $or: searchConditions };
@@ -99,14 +119,23 @@ export class QueryBuilder<T extends Document> {
 
   populate(fields: string[] = []): this {
     const populateFromQuery = this.queryParams.populate as string;
-    const fieldsToPopulate = fields.length
-      ? fields
-      : populateFromQuery
+    const fieldsToPopulate = populateFromQuery
       ? populateFromQuery.split(",")
+      : fields.length
+      ? fields
       : [];
 
     fieldsToPopulate.forEach((field) => {
-      this.mongooseQuery = this.mongooseQuery.populate(field.trim());
+      // Support syntax: "author:name;email" => populate only name, email
+      if (field.includes(":")) {
+        const [path, select] = field.split(":");
+        this.mongooseQuery = this.mongooseQuery.populate({
+          path: path.trim(),
+          select: select.split(";").join(" "), // allow "name;email"
+        });
+      } else {
+        this.mongooseQuery = this.mongooseQuery.populate(field.trim());
+      }
     });
 
     return this;

@@ -13,6 +13,11 @@ export enum DeliveryType {
   EXPRESS = "EXPRESS",
 }
 
+export enum PackageType {
+  DOCUMENT = "DOCUMENT",
+  PHYSICAL = "PHYSICAL",
+}
+
 export enum ParcelStatus {
   PENDING = "PENDING",
   APPROVED = "APPROVED",
@@ -34,6 +39,7 @@ export enum ParcelStatus {
 
 export interface AddressInfo {
   city: string;
+  area: string;
   address: string;
   village?: string;
   state?: string;
@@ -50,15 +56,20 @@ export interface DeliveryInfo {
     coordinates: number[];
     address: string;
   };
-  pickupAddress: AddressInfo;
+  pickupAddress: AddressInfo & {
+    phone: string;
+    name: string;
+  };
   deliveryAddress: AddressInfo & {
     phone: string;
+    name: string;
   };
   senderNote?: string;
 }
 
 export interface packageDetails {
   weight: number;
+  type: PackageType;
   dimensions?: {
     length: number;
     width: number;

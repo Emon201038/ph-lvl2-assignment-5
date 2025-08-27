@@ -38,7 +38,7 @@ const allParcels = (0, catchAsync_1.catchAsync)((req, res, next) => __awaiter(vo
 }));
 const listUserParcels = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const user = req.user;
-    const parcels = yield parcel_service_1.ParcelService.getUserParcels(user.userId);
+    const parcels = yield parcel_service_1.ParcelService.getUserParcels(user.userId, req.query);
     (0, sendResponse_1.sendResponse)(res, {
         success: true,
         statusCode: 200,

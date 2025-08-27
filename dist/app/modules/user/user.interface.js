@@ -7,7 +7,6 @@ var UserRole;
     UserRole["RECEIVER"] = "RECEIVER";
     UserRole["ADMIN"] = "ADMIN";
 })(UserRole || (exports.UserRole = UserRole = {}));
-;
 var AuthProvider;
 (function (AuthProvider) {
     AuthProvider["GOOGLE"] = "GOOGLE";

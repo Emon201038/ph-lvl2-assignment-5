@@ -13,7 +13,7 @@ const user_interface_1 = require("../user/user.interface");
 const authRouter = express_1.default.Router();
 // credentials
 authRouter.post("/login", (0, validateRequest_1.validateRequest)(auth_validation_1.loginSchema), auth_controller_1.AuthController.login);
-authRouter.get("/logout", auth_controller_1.AuthController.logout);
+authRouter.post("/logout", auth_controller_1.AuthController.logout);
 authRouter.get("/refresh-token", auth_controller_1.AuthController.refreshToken);
 authRouter.post("/set-password", (0, checkAuth_1.checkAuth)(...Object.values(user_interface_1.UserRole)), auth_controller_1.AuthController.setPassword);
 authRouter.post("/change-password", (0, checkAuth_1.checkAuth)(...Object.values(user_interface_1.UserRole)), (0, validateRequest_1.validateRequest)(auth_validation_1.changePasswordSchema), auth_controller_1.AuthController.changePassword);
@@ -22,7 +22,11 @@ authRouter.post("/reset-password", (0, validateRequest_1.validateRequest)(auth_v
 // google
 authRouter.get("/google", (req, res, next) => {
     const redirect = req.query.redirect || "/";
-    passport_1.default.authenticate('google', { scope: ['email', 'profile'], state: redirect })(req, res, next);
+    passport_1.default.authenticate("google", {
+        scope: ["email", "profile"],
+        state: redirect,
+    })(req, res, next);
 });
-authRouter.get("/google/callback", passport_1.default.authenticate('google', { failureRedirect: "/login" }), auth_controller_1.AuthController.googleCallback);
+authRouter.get("/google/callback", passport_1.default.authenticate("google", { failureRedirect: "/login" }), auth_controller_1.AuthController.googleCallback);
+authRouter.get("/me", (0, checkAuth_1.checkAuth)(...Object.values(user_interface_1.UserRole)), auth_controller_1.AuthController.me);
 exports.default = authRouter;

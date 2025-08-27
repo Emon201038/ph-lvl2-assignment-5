@@ -34,7 +34,10 @@ const allParcels = catchAsync(
 
 const listUserParcels = async (req: Request, res: Response) => {
   const user = req.user as JwtPayload;
-  const parcels = await ParcelService.getUserParcels(user.userId);
+  const parcels = await ParcelService.getUserParcels(
+    user.userId,
+    req.query as Record<string, string>
+  );
   sendResponse(res, {
     success: true,
     statusCode: 200,

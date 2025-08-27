@@ -18,8 +18,13 @@ const user_model_1 = __importDefault(require("../user/user.model"));
 const parcel_model_1 = __importDefault(require("../parcel/parcel.model"));
 const usersStats = () => __awaiter(void 0, void 0, void 0, function* () {
     const now = new Date();
-    const [activeUsers, last7daysUsers, last30daysUsers, usersByRole, blockedUsers, verifiedUsers, unverifiedUsers,] = yield Promise.all([
-        user_model_1.default.countDocuments({ isActive: true }),
+    const [totalUsers, activeUsers, last7daysUsers, last30daysUsers, usersByRole, blockedUsers, verifiedUsers, unverifiedUsers,] = yield Promise.all([
+        user_model_1.default.countDocuments({ isDeleted: false }),
+        user_model_1.default.countDocuments({
+            isBlocked: false,
+            isDeleted: false,
+            lastLogin: { $gte: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) },
+        }),
         user_model_1.default.countDocuments({ createdAt: { $gte: (0, date_fns_1.subDays)(now, 7) } }),
         user_model_1.default.countDocuments({ createdAt: { $gte: (0, date_fns_1.subDays)(now, 30) } }),
         user_model_1.default.aggregate([{ $group: { _id: "$role", count: { $sum: 1 } } }]),
@@ -28,6 +33,7 @@ const usersStats = () => __awaiter(void 0, void 0, void 0, function* () {
         user_model_1.default.countDocuments({ isVerified: false }),
     ]);
     return {
+        totalUsers,
         activeUsers,
         last7daysUsers,
         last30daysUsers,
@@ -41,7 +47,7 @@ const usersStats = () => __awaiter(void 0, void 0, void 0, function* () {
     };
 });
 const parcelsStats = () => __awaiter(void 0, void 0, void 0, function* () {
-    const [allParcel, parcelByStatus, parcelByPaymentMethod, parcelByPaymentStatus, blockedParcels, deletedParcels, senderWithMostParcels, receiverWithMostParcels,] = yield Promise.all([
+    const [allParcel, parcelByStatus, parcelByPaymentMethod, parcelByPaymentStatus, blockedParcels, deletedParcels, senderWithMostParcels, receiverWithMostParcels, totalRevinue,] = yield Promise.all([
         parcel_model_1.default.countDocuments({}),
         parcel_model_1.default.aggregate([{ $group: { _id: "$status", count: { $sum: 1 } } }]),
         parcel_model_1.default.aggregate([
@@ -136,6 +142,19 @@ const parcelsStats = () => __awaiter(void 0, void 0, void 0, function* () {
                 },
             },
         ]),
+        parcel_model_1.default.aggregate([
+            {
+                $match: {
+                    status: "DELIVERED",
+                },
+            },
+            {
+                $group: {
+                    _id: null,
+                    count: { $sum: "$paymentInfo.deleveryFee" },
+                },
+            },
+        ]),
     ]);
     return {
         allParcel,
@@ -157,6 +176,8 @@ const parcelsStats = () => __awaiter(void 0, void 0, void 0, function* () {
         mostReceiver: receiverWithMostParcels.length
             ? receiverWithMostParcels[0]
             : null,
+        totalRevinue: totalRevinue.length ? totalRevinue[0].count : 0,
+        monthlyRevinue: (totalRevinue.length ? totalRevinue[0].count : 0) / 12,
     };
 });
 exports.StatsService = {

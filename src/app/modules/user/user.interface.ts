@@ -4,13 +4,13 @@ export enum UserRole {
   SENDER = "SENDER",
   RECEIVER = "RECEIVER",
   ADMIN = "ADMIN",
-};
+}
 
 export enum AuthProvider {
   GOOGLE = "GOOGLE",
   FACEBOOK = "FACEBOOK",
   GITHUB = "GITHUB",
-  CREDENTIALS = "CREDENTIALS"
+  CREDENTIALS = "CREDENTIALS",
 }
 
 export interface IAuthProvider {
@@ -22,14 +22,20 @@ export interface IUser {
   email: string;
   phone: string;
   picture?: string;
-  adress?: string;
+  adress?: {
+    state: string;
+    city: string;
+    area: string;
+    adress: string;
+  };
   password?: string;
   role: UserRole;
   isBlocked: boolean;
   isVerified: boolean;
   isDeleted: boolean;
   auths: IAuthProvider[];
-  orders: Types.ObjectId[];
+  parcels: Types.ObjectId[];
   createdAt: Date;
   updatedAt: Date;
+  lastLogin: Date;
 }

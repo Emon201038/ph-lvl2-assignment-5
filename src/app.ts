@@ -14,17 +14,25 @@ import "./app/config/passport";
 const app = express();
 
 // middleware
-app.use(expressSession({
-  secret: envVars.EXPRESS_SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false
-}))
+app.use(
+  expressSession({
+    secret: envVars.EXPRESS_SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(
   corse({
-    origin: "*"
-  }));
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:5173",
+      "https://assignment-6-snowy-nine.vercel.app",
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -35,13 +43,16 @@ app.use("/api/v1", router);
 
 // health check
 app.get("/", (req, res) => {
-  res.json({ success: true, message: "Parcel Delevery System api is working." });
+  res.json({
+    success: true,
+    message: "Parcel Delevery System api is working.",
+  });
 });
 
 // global error handler
 app.use(globalErrorHandler);
 
 // not found handler
-app.use(notFound)
+app.use(notFound);
 
 export default app;
