@@ -16,6 +16,7 @@ exports.StatsService = void 0;
 const date_fns_1 = require("date-fns");
 const user_model_1 = __importDefault(require("../user/user.model"));
 const parcel_model_1 = __importDefault(require("../parcel/parcel.model"));
+const parcel_interface_1 = require("../parcel/parcel.interface");
 const usersStats = () => __awaiter(void 0, void 0, void 0, function* () {
     const now = new Date();
     const [totalUsers, activeUsers, last7daysUsers, last30daysUsers, usersByRole, blockedUsers, verifiedUsers, unverifiedUsers,] = yield Promise.all([
@@ -180,7 +181,69 @@ const parcelsStats = () => __awaiter(void 0, void 0, void 0, function* () {
         monthlyRevinue: (totalRevinue.length ? totalRevinue[0].count : 0) / 12,
     };
 });
+const monthlyReport = () => __awaiter(void 0, void 0, void 0, function* () {
+    var _a, _b, _c, _d, _e;
+    const now = new Date();
+    const sixMonthsAgo = new Date();
+    sixMonthsAgo.setMonth(now.getMonth() - 5);
+    const usersAgg = yield user_model_1.default.aggregate([
+        { $match: { createdAt: { $gte: sixMonthsAgo }, isDeleted: false } },
+        {
+            $group: {
+                _id: { year: { $year: "$createdAt" }, month: { $month: "$createdAt" } },
+                users: { $sum: 1 },
+            },
+        },
+    ]);
+    const parcelsAgg = yield parcel_model_1.default.aggregate([
+        { $match: { createdAt: { $gte: sixMonthsAgo }, isDeleted: false } },
+        {
+            $group: {
+                _id: { year: { $year: "$createdAt" }, month: { $month: "$createdAt" } },
+                parcels: { $sum: 1 },
+                revenue: {
+                    $sum: {
+                        $cond: [
+                            { $eq: ["$status", parcel_interface_1.ParcelStatus.DELIVERED] },
+                            "$paymentInfo.deleveryFee",
+                            0,
+                        ],
+                    },
+                },
+            },
+        },
+    ]);
+    const userMap = new Map(usersAgg.map((u) => [`${u._id.year}-${u._id.month}`, u.users]));
+    const parcelMap = new Map(parcelsAgg.map((p) => [`${p._id.year}-${p._id.month}`, p]));
+    const months = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+    ];
+    const results = [];
+    for (let i = 5; i >= 0; i--) {
+        const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+        const key = `${d.getFullYear()}-${d.getMonth() + 1}`;
+        results.push({
+            month: months[d.getMonth()],
+            users: (_a = userMap.get(key)) !== null && _a !== void 0 ? _a : 0,
+            parcels: (_c = (_b = parcelMap.get(key)) === null || _b === void 0 ? void 0 : _b.parcels) !== null && _c !== void 0 ? _c : 0,
+            revenue: (_e = (_d = parcelMap.get(key)) === null || _d === void 0 ? void 0 : _d.revenue) !== null && _e !== void 0 ? _e : 0,
+        });
+    }
+    return results;
+});
 exports.StatsService = {
     usersStats,
     parcelsStats,
+    monthlyReport,
 };

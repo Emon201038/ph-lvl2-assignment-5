@@ -1,6 +1,7 @@
 import { subDays } from "date-fns";
 import User from "../user/user.model";
 import Parcel from "../parcel/parcel.model";
+import { ParcelStatus } from "../parcel/parcel.interface";
 
 const usersStats = async () => {
   const now = new Date();
@@ -189,7 +190,85 @@ const parcelsStats = async () => {
   };
 };
 
+const monthlyReport = async () => {
+  const now = new Date();
+  const sixMonthsAgo = new Date();
+  sixMonthsAgo.setMonth(now.getMonth() - 5);
+
+  const usersAgg = await User.aggregate([
+    { $match: { createdAt: { $gte: sixMonthsAgo }, isDeleted: false } },
+    {
+      $group: {
+        _id: { year: { $year: "$createdAt" }, month: { $month: "$createdAt" } },
+        users: { $sum: 1 },
+      },
+    },
+  ]);
+
+  const parcelsAgg = await Parcel.aggregate([
+    { $match: { createdAt: { $gte: sixMonthsAgo }, isDeleted: false } },
+    {
+      $group: {
+        _id: { year: { $year: "$createdAt" }, month: { $month: "$createdAt" } },
+        parcels: { $sum: 1 },
+        revenue: {
+          $sum: {
+            $cond: [
+              { $eq: ["$status", ParcelStatus.DELIVERED] },
+              "$paymentInfo.deleveryFee",
+              0,
+            ],
+          },
+        },
+      },
+    },
+  ]);
+
+  const userMap = new Map(
+    usersAgg.map((u) => [`${u._id.year}-${u._id.month}`, u.users])
+  );
+  const parcelMap = new Map(
+    parcelsAgg.map((p) => [`${p._id.year}-${p._id.month}`, p])
+  );
+
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const results: {
+    month: string;
+    users: number;
+    parcels: number;
+    revenue: number;
+  }[] = [];
+
+  for (let i = 5; i >= 0; i--) {
+    const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+    const key = `${d.getFullYear()}-${d.getMonth() + 1}`;
+
+    results.push({
+      month: months[d.getMonth()],
+      users: userMap.get(key) ?? 0,
+      parcels: parcelMap.get(key)?.parcels ?? 0,
+      revenue: parcelMap.get(key)?.revenue ?? 0,
+    });
+  }
+
+  return results;
+};
+
 export const StatsService = {
   usersStats,
   parcelsStats,
+  monthlyReport,
 };

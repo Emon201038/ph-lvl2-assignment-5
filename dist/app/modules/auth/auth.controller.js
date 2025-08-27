@@ -61,8 +61,16 @@ const login = (0, catchAsync_1.catchAsync)((req, res, next) => __awaiter(void 0,
 }));
 const logout = (0, catchAsync_1.catchAsync)((req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     // clearAuthCookies(res);
-    res.clearCookie("accessToken");
-    res.clearCookie("refreshToken");
+    res.clearCookie("accessToken", {
+        httpOnly: true,
+        secure: true,
+        sameSite: "none",
+    });
+    res.clearCookie("refreshToken", {
+        httpOnly: true,
+        secure: true,
+        sameSite: "none",
+    });
     (0, sendResponse_1.sendResponse)(res, {
         success: true,
         statusCode: httpStatus_1.HTTP_STATUS.OK,

@@ -16,4 +16,10 @@ statsRouter.get(
   StatsController.parcelsStats
 );
 
+statsRouter.get(
+  "/monthly-report",
+  checkAuth(UserRole.ADMIN),
+  StatsController.monthlyReport
+);
+
 export default statsRouter;

@@ -25,7 +25,19 @@ const parcelsStats = catchAsync(
   }
 );
 
+const monthlyReport = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    sendResponse(res, {
+      success: true,
+      statusCode: 200,
+      message: "Monthly report retrieved successfully.",
+      data: await StatsService.monthlyReport(),
+    });
+  }
+);
+
 export const StatsController = {
   usersStats,
   parcelsStats,
+  monthlyReport,
 };
