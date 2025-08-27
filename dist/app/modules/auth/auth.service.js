@@ -84,7 +84,7 @@ const forgetPassword = (email) => __awaiter(void 0, void 0, void 0, function* ()
 });
 // ✅
 const resetPassword = (payload) => __awaiter(void 0, void 0, void 0, function* () {
-    const user = yield user_model_1.default.findById(payload.id).select("password auths");
+    const user = yield user_model_1.default.findById(payload.id).select("password auths email");
     if (!user) {
         throw new appError_1.default(httpStatus_1.HTTP_STATUS.NOT_FOUND, "User not found");
     }
@@ -101,10 +101,10 @@ const resetPassword = (payload) => __awaiter(void 0, void 0, void 0, function* (
     }
     user.password = payload.newPassword;
     yield user.save({ validateBeforeSave: true });
-    return true;
+    return { email: user.email };
 });
 const setPassword = (userId, newPassword) => __awaiter(void 0, void 0, void 0, function* () {
-    const user = yield user_model_1.default.findById(userId).select("password auths");
+    const user = yield user_model_1.default.findById(userId).select("password auths email");
     if (!user) {
         throw new appError_1.default(httpStatus_1.HTTP_STATUS.NOT_FOUND, "User not found");
     }
@@ -131,11 +131,20 @@ const refreshTokens = (refreshToken) => __awaiter(void 0, void 0, void 0, functi
     }
     const newAccessToken = (0, jwt_1.generateJwt)({ userId: user._id.toString(), email: user.email, role: user.role }, process.env.JWT_ACCESS_TOKEN_SECRET, process.env.JWT_ACCESS_TOKEN_EXPIRES_IN);
     const newRefreshTokenToken = (0, jwt_1.generateJwt)({ userId: user._id.toString(), email: user.email, role: user.role }, process.env.JWT_REFRESH_TOKEN_SECRET, process.env.JWT_REFRESH_TOKEN_EXPIRES_IN);
+    user.lastLogin = new Date();
+    yield user.save();
     return {
         accessToken: newAccessToken,
         refreshToken: newRefreshTokenToken,
         user,
     };
+});
+const me = (userId) => __awaiter(void 0, void 0, void 0, function* () {
+    const user = yield user_model_1.default.findById(userId).select("-password");
+    if (!user) {
+        throw new appError_1.default(httpStatus_1.HTTP_STATUS.NOT_FOUND, "User not found.");
+    }
+    return user;
 });
 exports.AuthService = {
     changePassword,
@@ -143,4 +152,5 @@ exports.AuthService = {
     forgetPassword,
     setPassword,
     refreshTokens,
+    me,
 };

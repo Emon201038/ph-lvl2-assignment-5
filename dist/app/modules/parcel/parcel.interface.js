@@ -1,11 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ParcelStatus = exports.DeliveryType = void 0;
+exports.ParcelStatus = exports.PackageType = exports.DeliveryType = void 0;
 var DeliveryType;
 (function (DeliveryType) {
     DeliveryType["STANDARD"] = "STANDARD";
     DeliveryType["EXPRESS"] = "EXPRESS";
 })(DeliveryType || (exports.DeliveryType = DeliveryType = {}));
+var PackageType;
+(function (PackageType) {
+    PackageType["DOCUMENT"] = "DOCUMENT";
+    PackageType["PHYSICAL"] = "PHYSICAL";
+})(PackageType || (exports.PackageType = PackageType = {}));
 var ParcelStatus;
 (function (ParcelStatus) {
     ParcelStatus["PENDING"] = "PENDING";

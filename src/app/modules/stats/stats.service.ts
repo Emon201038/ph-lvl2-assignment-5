@@ -6,6 +6,7 @@ const usersStats = async () => {
   const now = new Date();
 
   const [
+    totalUsers,
     activeUsers,
     last7daysUsers,
     last30daysUsers,
@@ -14,7 +15,12 @@ const usersStats = async () => {
     verifiedUsers,
     unverifiedUsers,
   ] = await Promise.all([
-    User.countDocuments({ isActive: true }),
+    User.countDocuments({ isDeleted: false }),
+    User.countDocuments({
+      isBlocked: false,
+      isDeleted: false,
+      lastLogin: { $gte: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) },
+    }),
     User.countDocuments({ createdAt: { $gte: subDays(now, 7) } }),
     User.countDocuments({ createdAt: { $gte: subDays(now, 30) } }),
     User.aggregate([{ $group: { _id: "$role", count: { $sum: 1 } } }]),
@@ -24,6 +30,7 @@ const usersStats = async () => {
   ]);
 
   return {
+    totalUsers,
     activeUsers,
     last7daysUsers,
     last30daysUsers,
@@ -46,6 +53,7 @@ const parcelsStats = async () => {
     deletedParcels,
     senderWithMostParcels,
     receiverWithMostParcels,
+    totalRevinue,
   ] = await Promise.all([
     Parcel.countDocuments({}),
     Parcel.aggregate([{ $group: { _id: "$status", count: { $sum: 1 } } }]),
@@ -141,6 +149,19 @@ const parcelsStats = async () => {
         },
       },
     ]),
+    Parcel.aggregate([
+      {
+        $match: {
+          status: "DELIVERED",
+        },
+      },
+      {
+        $group: {
+          _id: null,
+          count: { $sum: "$paymentInfo.deleveryFee" },
+        },
+      },
+    ]),
   ]);
 
   return {
@@ -163,6 +184,8 @@ const parcelsStats = async () => {
     mostReceiver: receiverWithMostParcels.length
       ? receiverWithMostParcels[0]
       : null,
+    totalRevinue: totalRevinue.length ? totalRevinue[0].count : 0,
+    monthlyRevinue: (totalRevinue.length ? totalRevinue[0].count : 0) / 12,
   };
 };
 

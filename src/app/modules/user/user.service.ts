@@ -1,9 +1,11 @@
+import bcrypt from "bcryptjs";
 import AppError from "../../helpers/appError";
 import { HTTP_STATUS } from "../../utils/httpStatus";
 import { JwtPayload } from "../../utils/jwt";
 import { QueryBuilder } from "../../utils/queryBuilder";
 import { AuthProvider, IAuthProvider, IUser, UserRole } from "./user.interface";
 import User from "./user.model";
+import { UpdateUserInput } from "./user.validation";
 
 const getAllUsers = async (queries: Record<string, string>) => {
   const builder = new QueryBuilder<typeof User.prototype>(User, queries);
@@ -47,7 +49,7 @@ const createUser = async (payload: Partial<IUser>): Promise<IUser> => {
 
 const updateUser = async (
   userId: string,
-  payload: Partial<IUser>,
+  payload: Partial<IUser> & UpdateUserInput,
   loggedInUser: JwtPayload
 ) => {
   const user = await User.findById(userId);
@@ -78,10 +80,41 @@ const updateUser = async (
     }
   }
 
+  if (payload.password) {
+    const isMatchPass = await bcrypt.compare(
+      payload.currentPassword as string,
+      user.password as string
+    );
+    if (!isMatchPass) {
+      throw new AppError(HTTP_STATUS.BAD_REQUEST, "Invalid password.");
+    }
+  }
+
   return await User.findByIdAndUpdate(userId, payload, {
     new: true,
     runValidators: true,
   });
+};
+
+const updateUserRole = async (userId: string, role: "SENDER" | "RECEIVER") => {
+  const user = await User.findById(userId);
+  if (!user) {
+    throw new AppError(HTTP_STATUS.NOT_FOUND, "User not found.");
+  }
+  if (user.role === UserRole.ADMIN) {
+    throw new AppError(HTTP_STATUS.FORBIDDEN, "You can't update role.");
+  }
+  if (user.parcels.length > 0) {
+    throw new AppError(
+      HTTP_STATUS.FORBIDDEN,
+      "You can't update role. Better you can create new account"
+    );
+  }
+  return await User.findByIdAndUpdate(
+    userId,
+    { role },
+    { new: true, runValidators: true }
+  );
 };
 
 const deleteUser = async (loggedInUser: JwtPayload, userId: string) => {
@@ -123,5 +156,6 @@ export const UserService = {
   getUser,
   createUser,
   updateUser,
+  updateUserRole,
   deleteUser,
 };

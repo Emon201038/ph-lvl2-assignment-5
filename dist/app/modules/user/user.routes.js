@@ -15,6 +15,9 @@ userRouter
     .get((0, checkAuth_1.checkAuth)(user_interface_1.UserRole.ADMIN), user_controller_1.UserController.getUsers)
     .post((0, validateRequest_1.validateRequest)(user_validation_1.createUserSchema), user_controller_1.UserController.createUser);
 userRouter
+    .route("/role/:id")
+    .patch((0, checkAuth_1.checkAuth)(user_interface_1.UserRole.RECEIVER, user_interface_1.UserRole.SENDER), (0, validateRequest_1.validateRequest)(user_validation_1.updateUserRoleSchema), user_controller_1.UserController.updateUserRole);
+userRouter
     .route("/:id")
     .get((0, checkAuth_1.checkAuth)(user_interface_1.UserRole.ADMIN), user_controller_1.UserController.getUser)
     .put((0, checkAuth_1.checkAuth)(...Object.values(user_interface_1.UserRole)), (0, validateRequest_1.validateRequest)(user_validation_1.updateUserSchema), user_controller_1.UserController.updateUser)
