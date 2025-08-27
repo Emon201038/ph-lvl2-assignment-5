@@ -13,7 +13,7 @@ parcelRouter
     .get((0, checkAuth_1.checkAuth)(user_interface_1.UserRole.ADMIN), parcel_controller_1.ParcelController.allParcels);
 parcelRouter.get("/sender", (0, checkAuth_1.checkAuth)(user_interface_1.UserRole.SENDER, user_interface_1.UserRole.ADMIN), parcel_controller_1.ParcelController.listUserParcels);
 parcelRouter.get("/receiver", (0, checkAuth_1.checkAuth)(user_interface_1.UserRole.RECEIVER, user_interface_1.UserRole.ADMIN), parcel_controller_1.ParcelController.listUserParcels);
-parcelRouter.patch("/cancel/:id", (0, checkAuth_1.checkAuth)(...Object.values(user_interface_1.UserRole)), parcel_controller_1.ParcelController.cancel);
+parcelRouter.patch("/cancel/:id", (0, checkAuth_1.checkAuth)(user_interface_1.UserRole.SENDER), parcel_controller_1.ParcelController.cancel);
 parcelRouter.patch("/block/:id", (0, checkAuth_1.checkAuth)(user_interface_1.UserRole.ADMIN), parcel_controller_1.ParcelController.block);
 parcelRouter.patch("/confirm/:id", (0, checkAuth_1.checkAuth)(user_interface_1.UserRole.RECEIVER, user_interface_1.UserRole.ADMIN), parcel_controller_1.ParcelController.confirm);
 parcelRouter.patch("/return/:id", (0, checkAuth_1.checkAuth)(user_interface_1.UserRole.RECEIVER, user_interface_1.UserRole.ADMIN), parcel_controller_1.ParcelController.returnParcel);

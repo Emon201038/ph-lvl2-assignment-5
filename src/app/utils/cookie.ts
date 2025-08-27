@@ -16,14 +16,14 @@ export const setAuthCookies = (res: Response, token: IAuthCookies) => {
   if (token.accessToken)
     setCookie(res, "accessToken", token.accessToken, {
       httpOnly: true,
-      secure: envVars.NODE_ENV === "production",
+      secure: true,
       sameSite: "none",
     });
 
   if (token.refreshToken)
     setCookie(res, "refreshToken", token.refreshToken, {
       httpOnly: true,
-      secure: envVars.NODE_ENV === "production",
+      secure: true,
       sameSite: "none",
     });
 };

@@ -8,13 +8,13 @@ const setAuthCookies = (res, token) => {
     if (token.accessToken)
         (0, exports.setCookie)(res, "accessToken", token.accessToken, {
             httpOnly: true,
-            secure: env_1.envVars.NODE_ENV === "production",
+            secure: true,
             sameSite: "none",
         });
     if (token.refreshToken)
         (0, exports.setCookie)(res, "refreshToken", token.refreshToken, {
             httpOnly: true,
-            secure: env_1.envVars.NODE_ENV === "production",
+            secure: true,
             sameSite: "none",
         });
 };

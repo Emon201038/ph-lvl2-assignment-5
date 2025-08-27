@@ -32,7 +32,7 @@ parcelRouter.get(
 
 parcelRouter.patch(
   "/cancel/:id",
-  checkAuth(...Object.values(UserRole)),
+  checkAuth(UserRole.SENDER),
   ParcelController.cancel
 );
 

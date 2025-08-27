@@ -3,6 +3,7 @@ import {
   DeliveryType,
   IParcel,
   IStatusLog,
+  PackageType,
   ParcelStatus,
 } from "./parcel.interface";
 
@@ -57,6 +58,11 @@ const ParcelSchema = new Schema<IParcel>(
       required: [true, "Receiver is required"],
     },
     packageDetails: {
+      type: {
+        type: String,
+        enum: Object.values(PackageType),
+        required: [true, "Package type is required"],
+      },
       weight: { type: Number, required: true },
       dimensions: {
         length: Number,
@@ -74,7 +80,7 @@ const ParcelSchema = new Schema<IParcel>(
       images: [String],
     },
     deliveryInfo: {
-      pickupDate: { type: Date, required: true },
+      pickupDate: { type: Date, default: new Date() },
       expectedDeliveryDate: { type: Date, required: true },
       deliveryType: {
         type: String,
@@ -87,27 +93,55 @@ const ParcelSchema = new Schema<IParcel>(
         address: String,
       },
       pickupAddress: {
+        state: {
+          type: String,
+          required: [true, "Pickup State is required"],
+        },
         city: {
           type: String,
           required: [true, "Pickup City is required"],
+        },
+        area: {
+          type: String,
+          required: [true, "Pickup Area is required"],
         },
         address: {
           type: String,
           required: [true, "Pickup Address is required"],
         },
+        phone: {
+          type: String,
+          required: [true, "Pickup phone is required"],
+        },
+        name: {
+          type: String,
+          required: [true, "Pickup name is required"],
+        },
       },
       deliveryAddress: {
+        state: {
+          type: String,
+          required: [true, "Receiver State is required"],
+        },
         city: {
           type: String,
-          required: [true, "Delivery City is required"],
+          required: [true, "Receiver City is required"],
+        },
+        area: {
+          type: String,
+          required: [true, "Receiver Area is required"],
         },
         address: {
           type: String,
-          required: [true, "Delivery Address is required"],
+          required: [true, "Receiver Address is required"],
         },
         phone: {
           type: String,
-          required: [true, "Delivery phone is required"],
+          required: [true, "Receiver phone is required"],
+        },
+        name: {
+          type: String,
+          required: [true, "Receiver name is required"],
         },
       },
       senderNote: String,

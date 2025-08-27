@@ -9,45 +9,81 @@ export const PaymentMethodEnum = z.enum(["COD", "ONLINE"]);
 export const PaymentStatusEnum = z.enum(["PAID", "UNPAID"]);
 
 export const createParcelSchema = z.object({
-  // Required flat fields
-  sender: z.string({ error: "Sender ID is required" }),
-  receiver: z.string({ error: "Receiver ID is required" }),
-
-  paymentMethod: PaymentMethodEnum,
-  paymentStatus: PaymentStatusEnum,
-  paymentAmount: z.number({ error: "Payment amount is required" }),
-
-  weight: z.number({ error: "Weight is required" }),
-  length: z.number().optional(),
-  width: z.number().optional(),
-  height: z.number().optional(),
-  description: z.string().optional(),
-
-  pickupDate: z.coerce.date(),
-  expectedDeliveryDate: z.coerce.date(),
-  deliveryType: DeliveryTypeEnum.default("STANDARD"),
-
-  pickupCity: z.string({ error: "Pickup city is required" }),
-  pickupAddress: z.string({ error: "Pickup address is required" }),
-
-  deliveryCity: z.string({ error: "Delivery city is required" }),
-  deliveryAddress: z.string({ error: "Delivery address is required" }),
-  deliveryPhone: z.string({ error: "Delivery phone is required" }),
-
-  currentLocationAddress: z.string().optional(),
-  currentLocationLat: z.number().optional(), // coordinates[1]
-  currentLocationLng: z.number().optional(), // coordinates[0]
-
-  senderNote: z.string().optional(),
-  status: ParcelStatusEnum.optional(),
-
-  itemNames: z.array(z.string()).optional(),
-  itemQuantities: z.array(z.number()).optional(),
-  itemValues: z.array(z.number()).optional(),
-
-  images: z.array(z.string()).optional(),
-
-  reviewIds: z.array(z.string()).optional(),
+  receiverEmail: z
+    .string({ message: "Receiver Email is required" })
+    .email({ message: "Enter valid email" }),
+  packageDetails: z.object({
+    weight: z.coerce
+      .number({ error: "Weight is required" })
+      .positive()
+      .min(0.5, "Weight must be at least 0.5kg")
+      .max(50, "Weight must be less than 50kg"),
+    dimensions: z.object({
+      length: z.coerce
+        .number({ error: "Length is required" })
+        .positive()
+        .min(1, "Length must be at least 1cm")
+        .max(100, "Length must be less than 100cm")
+        .optional(),
+      width: z.coerce
+        .number({ error: "Width is required" })
+        .positive()
+        .min(1, "Width must be at least 1cm")
+        .max(100, "Width must be less than 100cm")
+        .optional(),
+      height: z.coerce
+        .number({ error: "Height is required" })
+        .positive()
+        .min(1, "Height must be at least 1cm")
+        .max(100, "Height must be less than 100cm")
+        .optional(),
+    }),
+    type: z.enum(["DOCUMENT", "PHYSICAL"]).default("PHYSICAL"),
+    description: z.string().optional(),
+  }),
+  deliveryInfo: z.object({
+    deliveryAddress: z.object({
+      state: z
+        .string({ message: " state is required" })
+        .min(1, "Select a state"),
+      city: z.string({ message: " city is required" }).min(1, "Select a city"),
+      area: z.string({ message: " area is required" }).min(1, "Select a area"),
+      address: z
+        .string({ message: "Full Address is required" })
+        .min(1, "Enter full address"),
+      phone: z
+        .string({ message: "Phone number is required" })
+        .min(1, "Enter phone number"),
+      name: z
+        .string({ message: "Receiver name is requred" })
+        .min(1, "Required")
+        .max(32, "Max 32 characters"),
+    }),
+    pickupAddress: z.object({
+      state: z
+        .string({ message: " state is required" })
+        .min(1, "Select a state"),
+      city: z.string({ message: " city is required" }).min(1, "Select a city"),
+      area: z.string({ message: " area is required" }).min(1, "Select a area"),
+      address: z
+        .string({ message: "Full Address is required" })
+        .min(1, "Enter full address"),
+      phone: z
+        .string({ message: "Phone number is required" })
+        .min(1, "Enter phone number"),
+      name: z
+        .string({ message: "Sender name is requred" })
+        .min(1, "Required")
+        .max(32, "Max 32 characters"),
+    }),
+    deliveryType: z.enum(["STANDARD", "EXPRESS"]).default("STANDARD"),
+    senderNote: z.string().optional(),
+  }),
+  paymentInfo: z.object({
+    method: z.enum(["COD", "ONLINE"], { error: "Payment method is required" }),
+    status: z.enum(["UNPAID", "PAID"], { error: "Payment status is required" }),
+    amount: z.coerce.number({ message: "Amount is required" }).positive(),
+  }),
 });
 
 export type CreateParcelSchemaType = z.infer<typeof createParcelSchema>;

@@ -6,6 +6,7 @@ import { sendResponse } from "../../utils/sendResponse";
 import { HTTP_STATUS } from "../../utils/httpStatus";
 import { UserService } from "./user.service";
 import { JwtPayload } from "../../utils/jwt";
+import AppError from "../../helpers/appError";
 
 const createUser = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
@@ -58,6 +59,21 @@ const updateUser = catchAsync(
   }
 );
 
+const updateUserRole = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    if (req.params.id !== (req.user as JwtPayload).userId) {
+      throw new AppError(HTTP_STATUS.FORBIDDEN, "You are not authorized.");
+    }
+    const user = await UserService.updateUserRole(req.params.id, req.body.role);
+    sendResponse(res, {
+      success: true,
+      statusCode: HTTP_STATUS.OK,
+      message: "User role updated successfully.",
+      data: user,
+    });
+  }
+);
+
 const deleteUser = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const user = await UserService.deleteUser(
@@ -79,5 +95,6 @@ export const UserController = {
   getUser,
   createUser,
   updateUser,
+  updateUserRole,
   deleteUser,
 };

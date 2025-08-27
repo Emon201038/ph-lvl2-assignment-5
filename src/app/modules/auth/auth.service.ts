@@ -110,7 +110,7 @@ const forgetPassword = async (email: string) => {
 
 // ✅
 const resetPassword = async (payload: Record<string, string>) => {
-  const user = await User.findById(payload.id).select("password auths");
+  const user = await User.findById(payload.id).select("password auths email");
   if (!user) {
     throw new AppError(HTTP_STATUS.NOT_FOUND, "User not found");
   }
@@ -143,11 +143,11 @@ const resetPassword = async (payload: Record<string, string>) => {
   user.password = payload.newPassword;
   await user.save({ validateBeforeSave: true });
 
-  return true;
+  return { email: user.email };
 };
 
 const setPassword = async (userId: string, newPassword: string) => {
-  const user = await User.findById(userId).select("password auths");
+  const user = await User.findById(userId).select("password auths email");
   if (!user) {
     throw new AppError(HTTP_STATUS.NOT_FOUND, "User not found");
   }
@@ -197,11 +197,22 @@ const refreshTokens = async (refreshToken: string) => {
     process.env.JWT_REFRESH_TOKEN_EXPIRES_IN
   );
 
+  user.lastLogin = new Date();
+  await user.save();
+
   return {
     accessToken: newAccessToken,
     refreshToken: newRefreshTokenToken,
     user,
   };
+};
+
+const me = async (userId: string) => {
+  const user = await User.findById(userId).select("-password");
+  if (!user) {
+    throw new AppError(HTTP_STATUS.NOT_FOUND, "User not found.");
+  }
+  return user;
 };
 
 export const AuthService = {
@@ -210,4 +221,5 @@ export const AuthService = {
   forgetPassword,
   setPassword,
   refreshTokens,
+  me,
 };

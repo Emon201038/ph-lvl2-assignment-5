@@ -24,6 +24,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserService = void 0;
+const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const appError_1 = __importDefault(require("../../helpers/appError"));
 const httpStatus_1 = require("../../utils/httpStatus");
 const queryBuilder_1 = require("../../utils/queryBuilder");
@@ -76,10 +77,29 @@ const updateUser = (userId, payload, loggedInUser) => __awaiter(void 0, void 0, 
             throw new appError_1.default(httpStatus_1.HTTP_STATUS.FORBIDDEN, "Your not authorized to update status.");
         }
     }
+    if (payload.password) {
+        const isMatchPass = yield bcryptjs_1.default.compare(payload.currentPassword, user.password);
+        if (!isMatchPass) {
+            throw new appError_1.default(httpStatus_1.HTTP_STATUS.BAD_REQUEST, "Invalid password.");
+        }
+    }
     return yield user_model_1.default.findByIdAndUpdate(userId, payload, {
         new: true,
         runValidators: true,
     });
+});
+const updateUserRole = (userId, role) => __awaiter(void 0, void 0, void 0, function* () {
+    const user = yield user_model_1.default.findById(userId);
+    if (!user) {
+        throw new appError_1.default(httpStatus_1.HTTP_STATUS.NOT_FOUND, "User not found.");
+    }
+    if (user.role === user_interface_1.UserRole.ADMIN) {
+        throw new appError_1.default(httpStatus_1.HTTP_STATUS.FORBIDDEN, "You can't update role.");
+    }
+    if (user.parcels.length > 0) {
+        throw new appError_1.default(httpStatus_1.HTTP_STATUS.FORBIDDEN, "You can't update role. Better you can create new account");
+    }
+    return yield user_model_1.default.findByIdAndUpdate(userId, { role }, { new: true, runValidators: true });
 });
 const deleteUser = (loggedInUser, userId) => __awaiter(void 0, void 0, void 0, function* () {
     const user = yield user_model_1.default.findById(userId);
@@ -104,5 +124,6 @@ exports.UserService = {
     getUser,
     createUser,
     updateUser,
+    updateUserRole,
     deleteUser,
 };

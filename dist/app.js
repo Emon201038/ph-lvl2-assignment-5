@@ -19,12 +19,17 @@ const app = (0, express_1.default)();
 app.use((0, express_session_1.default)({
     secret: env_1.envVars.EXPRESS_SESSION_SECRET,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
 }));
 app.use(passport_1.default.initialize());
 app.use(passport_1.default.session());
 app.use((0, cors_1.default)({
-    origin: "*"
+    origin: [
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "https://assignment-6-snowy-nine.vercel.app",
+    ],
+    credentials: true,
 }));
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
@@ -34,7 +39,10 @@ app.use((0, morgan_1.default)("dev"));
 app.use("/api/v1", routes_1.default);
 // health check
 app.get("/", (req, res) => {
-    res.json({ success: true, message: "Parcel Delevery System api is working." });
+    res.json({
+        success: true,
+        message: "Parcel Delevery System api is working.",
+    });
 });
 // global error handler
 app.use(globalErrorHandler_1.globalErrorHandler);
